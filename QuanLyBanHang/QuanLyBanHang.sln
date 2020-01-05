@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTO", "DTO\DTO.csproj", "{2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL", "BAL\BAL.csproj", "{607A6668-640E-4A76-A24E-23CFFC45538F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DTA", "DTA\DTA.csproj", "{BC8CFBF7-0322-4F10-8C1A-E61242074517}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{D8CC4B45-3EAD-43FA-BE57-33123B85EA8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{607A6668-640E-4A76-A24E-23CFFC45538F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{607A6668-640E-4A76-A24E-23CFFC45538F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{607A6668-640E-4A76-A24E-23CFFC45538F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BC8CFBF7-0322-4F10-8C1A-E61242074517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BC8CFBF7-0322-4F10-8C1A-E61242074517}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BC8CFBF7-0322-4F10-8C1A-E61242074517}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BC8CFBF7-0322-4F10-8C1A-E61242074517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8CC4B45-3EAD-43FA-BE57-33123B85EA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8CC4B45-3EAD-43FA-BE57-33123B85EA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8CC4B45-3EAD-43FA-BE57-33123B85EA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8CC4B45-3EAD-43FA-BE57-33123B85EA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

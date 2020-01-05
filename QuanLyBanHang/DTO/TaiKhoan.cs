@@ -7,22 +7,20 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    class TaiKhoan
+    public class TaiKhoan
     {
         public int ID { get; set; }
         public string TKhoan { get; set; }
         public string MatKhau { get; set; }
-        public int KeyMaHoa { get; set; }
-        public byte Loai { get; set; }
+        public byte? Loai { get; set; }
 
-        public TaiKhoan() { ID = -1; TKhoan = ""; MatKhau = ""; KeyMaHoa = new Random().Next(100, 999); Loai = 1; }
+        public TaiKhoan() { ID = -1; TKhoan = ""; MatKhau = "";  Loai = 1; }
 
-        public TaiKhoan(int iD, string tKhoan, string matKhau, int keyMaHoa, byte loai)
+        public TaiKhoan(int iD, string tKhoan, string matKhau, byte loai)
         {
             ID = iD;
             TKhoan = tKhoan;
             MatKhau = matKhau;
-            KeyMaHoa = keyMaHoa;
             Loai = loai;
         }
 
@@ -31,7 +29,6 @@ namespace DTO
             ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
             TKhoan = dr["TaiKhoan"].ToString();
             MatKhau = dr["MatKhau"].ToString(); ;
-            KeyMaHoa = Convert.ToInt32(dr["ID"]);
             Loai = Convert.ToByte(dr["Loai"]);
         }
     }

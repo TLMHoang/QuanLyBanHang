@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 
 namespace DTO
 {
-    public class Loai
+    public class NhanVien
     {
-        public int ID { get; set; }
-        public string TenLoai { get; set; }
+        public int ID { set; get; }
+        public string Ten { set; get; }
 
-        public Loai() { ID = -1; TenLoai = ""; }
+        public NhanVien() { ID = -1; Ten = ""; }
 
-        public Loai(int iD, string tenLoai)
+        public NhanVien(int iD, string ten)
         {
             ID = iD;
-            TenLoai = tenLoai;
+            Ten = ten;
         }
 
-        public Loai(DataRow dr)
+        public NhanVien(DataRow dr)
         {
             ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
-            TenLoai = dr["TenLoai"].ToString();
+            Ten = dr["Ten"].ToString();
         }
     }
 }
