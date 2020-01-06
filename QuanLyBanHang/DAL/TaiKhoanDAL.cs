@@ -48,7 +48,7 @@ namespace DAL
 
         public async Task<int> DangNhap(string TaiKhoan, string MatKhau)
         {
-            return await ExecuteNonQuery(
+            return await ExecuteScalar<int>(
                 "DangNhap",
                 new SqlParameter("@TaiKhoan", SqlDbType.VarChar) { Value = TaiKhoan },
                 new SqlParameter("@MatKhau", SqlDbType.VarChar) { Value = MatKhau }

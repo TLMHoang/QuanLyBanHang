@@ -42,7 +42,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CInterface.cs" />
-    <Compile Include="TaiKhoanBLL.cs" />
+    <Compile Include="CTHDBAL.cs" />
+    <Compile Include="HangBAL.cs" />
+    <Compile Include="HoaDonBAL.cs" />
+    <Compile Include="KhachHangBAL.cs" />
+    <Compile Include="LoaiBAL.cs" />
+    <Compile Include="NhanVienBAL.cs" />
+    <Compile Include="TaiKhoanBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

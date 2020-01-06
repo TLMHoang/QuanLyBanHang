@@ -29,6 +29,7 @@ namespace DAL
                         }
 
                         await con.OpenAsync();
+                        
                         return await cmd.ExecuteNonQueryAsync();
                     }
                 }
@@ -87,6 +88,42 @@ namespace DAL
             }
 
             return dt;
+        }
+
+        public async Task<T> ExecuteScalar<T>(string ProcName, params SqlParameter[] parameters)
+        {
+            using (SqlConnection con = new SqlConnection(connStr))
+            {
+                try
+                {
+                    using (SqlCommand cmd = new SqlCommand(ProcName, con))
+                    {
+                        cmd.CommandType = CommandType.StoredProcedure;
+                        if (parameters != null)
+                        {
+                            cmd.Parameters.AddRange(parameters);
+                        }
+
+                        await con.OpenAsync();
+                        var a = default(T);
+                        return (T)Convert.ChangeType(await cmd.ExecuteScalarAsync(), typeof(T));
+
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Lỗi \n\n" + ex.ToString());
+                }
+                finally
+                {
+                    if (con.State == ConnectionState.Open)
+                    {
+                        con.Close();
+                    }
+                }
+
+                return default(T);
+            }
         }
     }
 }
