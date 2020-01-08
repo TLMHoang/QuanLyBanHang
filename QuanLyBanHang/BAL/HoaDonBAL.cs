@@ -22,6 +22,11 @@ namespace BAL
             return await Val.Lay();
         }
 
+        //public async Task<HoaDon> LayID(int ID)
+        //{
+        //    return new HoaDon((await Val.Lay(ID)).Rows[0]);
+        //}
+
         public async Task<List<HoaDon>> LayLst()
         {
             List<HoaDon> lst = new List<HoaDon>();

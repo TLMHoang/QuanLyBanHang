@@ -30,6 +30,7 @@ namespace DAL
 
                         await con.OpenAsync();
                         
+
                         return await cmd.ExecuteNonQueryAsync();
                     }
                 }
@@ -105,8 +106,9 @@ namespace DAL
                         }
 
                         await con.OpenAsync();
-                        var a = default(T);
-                        return (T)Convert.ChangeType(await cmd.ExecuteScalarAsync(), typeof(T));
+                        var Val = await cmd.ExecuteScalarAsync();
+                        
+                        return (Val == null) ? default(T) : (T)Convert.ChangeType(Val, typeof(T));
 
                     }
                 }

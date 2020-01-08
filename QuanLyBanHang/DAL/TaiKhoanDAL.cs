@@ -14,9 +14,8 @@ namespace DAL
         public async Task<int> CapNhap(TaiKhoan obj)
         {
             return await ExecuteNonQuery(
-                "SuaNhanVien",
+                "SuaTaiKhoan",
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
-                new SqlParameter("@TKhoan", SqlDbType.VarChar) { Value = obj.TKhoan },
                 new SqlParameter("@MatKhau", SqlDbType.VarChar) { Value = obj.MatKhau },
                 new SqlParameter("@Loai", SqlDbType.VarChar) { Value = obj.Loai }
                 );
@@ -30,7 +29,7 @@ namespace DAL
         public async Task<int> Them(TaiKhoan obj)
         {
             return await ExecuteNonQuery(
-                "SuaNhanVien",
+                "ThemTaiKhoan",
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
                 new SqlParameter("@TKhoan", SqlDbType.VarChar) { Value = obj.TKhoan },
                 new SqlParameter("@MatKhau", SqlDbType.VarChar) { Value = obj.MatKhau },
@@ -41,18 +40,23 @@ namespace DAL
         public async Task<int> Xoa(TaiKhoan obj)
         {
             return await ExecuteNonQuery(
-                "SuaNhanVien",
+                "XoaTaiKhoan",
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID }
                 );
         }
 
-        public async Task<int> DangNhap(string TaiKhoan, string MatKhau)
+        public async Task<DataTable> DangNhap(string TaiKhoan, string MatKhau)
         {
-            return await ExecuteScalar<int>(
+            return await ExecuteQuery(
                 "DangNhap",
                 new SqlParameter("@TaiKhoan", SqlDbType.VarChar) { Value = TaiKhoan },
                 new SqlParameter("@MatKhau", SqlDbType.VarChar) { Value = MatKhau }
                 );
         }
+
+        //public async Task<DataTable> Lay(int ID)
+        //{
+        //    return await ExecuteQuery("LayTaiKhoan", new SqlParameter("@ID", SqlDbType.Int) { Value = ID});
+        //}
     }
 }

@@ -47,5 +47,10 @@ namespace DAL
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID }
                 );
         }
+
+        //public async Task<DataTable> Lay(int ID)
+        //{
+        //    return await ExecuteQuery("LayHoaDon", new SqlParameter("@ID", SqlDbType.Int) { Value = ID });
+        //}
     }
 }

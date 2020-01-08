@@ -17,8 +17,9 @@ namespace DAL
                 "SuaHang",
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
                 new SqlParameter("@TenHang", SqlDbType.NVarChar) { Value = obj.TenHang },
-                new SqlParameter("@GiaHang", SqlDbType.NVarChar) { Value = obj.GiaHang },
-                new SqlParameter("@IDLoai", SqlDbType.NVarChar) { Value = obj.IDLoai },
+                new SqlParameter("@GiaBan", SqlDbType.NVarChar) { Value = obj.GiaBan },
+                new SqlParameter("@GiaSi", SqlDbType.NVarChar) { Value = obj.GiaSi },
+                new SqlParameter("@GiaNhap", SqlDbType.NVarChar) { Value = obj.GiaNhap },
                 new SqlParameter("@SoLuong", SqlDbType.Int) { Value = obj.SoLuong }
                 );
         }
@@ -34,8 +35,9 @@ namespace DAL
                 "ThemHang",
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
                 new SqlParameter("@TenHang", SqlDbType.NVarChar) { Value = obj.TenHang },
-                new SqlParameter("@GiaHang", SqlDbType.NVarChar) { Value = obj.GiaHang },
-                new SqlParameter("@IDLoai", SqlDbType.NVarChar) { Value = obj.IDLoai },
+                new SqlParameter("@GiaBan", SqlDbType.NVarChar) { Value = obj.GiaBan },
+                new SqlParameter("@GiaSi", SqlDbType.NVarChar) { Value = obj.GiaSi },
+                new SqlParameter("@GiaNhap", SqlDbType.NVarChar) { Value = obj.GiaNhap },
                 new SqlParameter("@SoLuong", SqlDbType.Int) { Value = obj.SoLuong }
                 );
         }
@@ -47,5 +49,10 @@ namespace DAL
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID }
                 );
         }
+
+        //public async Task<DataTable> Lay(int ID)
+        //{
+        //    return await ExecuteQuery("LayHang", new SqlParameter("@ID", SqlDbType.Int) { Value = ID });
+        //}
     }
 }

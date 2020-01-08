@@ -22,6 +22,11 @@ namespace BAL
             return await Val.Lay();
         }
 
+        //public async Task<CTHD> LayID(int ID)
+        //{
+        //    return new CTHD((await Val.Lay(ID)).Rows[0]);
+        //}
+
         public async Task<List<CTHD>> LayLst()
         {
             List<CTHD> lst = new List<CTHD>();

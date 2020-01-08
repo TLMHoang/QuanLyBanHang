@@ -27,7 +27,7 @@ namespace DTO
         public TaiKhoan(DataRow dr)
         {
             ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
-            TKhoan = dr["TaiKhoan"].ToString();
+            TKhoan = dr["TKhoan"].ToString();
             MatKhau = dr["MatKhau"].ToString(); ;
             Loai = Convert.ToByte(dr["Loai"]);
         }

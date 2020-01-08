@@ -43,14 +43,20 @@ namespace BAL
             return await Val.Xoa(obj);
         }
 
-        public async Task<bool> DangNhap(string TaiKhoan, string MatKhau)
+        public async Task<List<TaiKhoan>> DangNhap(string TaiKhoan, string MatKhau)
         {
-            if (await Val.DangNhap(TaiKhoan, MatKhau) != 0)
+            List<TaiKhoan> lst = new List<TaiKhoan>();
+            foreach (DataRow item in (await Val.DangNhap(TaiKhoan, MatKhau)).Rows)
             {
-                return true;
+                lst.Add(new TaiKhoan(item));
             }
-
-            return false;
+            return lst;
         }
+
+        //public async Task<TaiKhoan> LayID(int ID)
+        //{
+        //    return new TaiKhoan((await Val.Lay(ID)).Rows[0]);
+        //}
+
     }
 }

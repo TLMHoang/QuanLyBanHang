@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -46,7 +47,6 @@
     <Compile Include="HangBAL.cs" />
     <Compile Include="HoaDonBAL.cs" />
     <Compile Include="KhachHangBAL.cs" />
-    <Compile Include="LoaiBAL.cs" />
     <Compile Include="NhanVienBAL.cs" />
     <Compile Include="TaiKhoanBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

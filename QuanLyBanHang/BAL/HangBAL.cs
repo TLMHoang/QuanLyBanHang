@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BAL
 {
-    public class HangBAL :CInterface<Hang>
+    public class HangBAL : CInterface<Hang>
     {
         HangDAL Val = new HangDAL();
         public async Task<int> CapNhap(Hang obj)
@@ -21,6 +21,11 @@ namespace BAL
         {
             return await Val.Lay();
         }
+
+        //public async Task<Hang> LayID(int ID)
+        //{
+        //    return new Hang((await Val.Lay(ID)).Rows[0]);
+        //}
 
         public async Task<List<Hang>> LayLst()
         {

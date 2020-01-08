@@ -22,6 +22,11 @@ namespace BAL
             return await Val.Lay();
         }
 
+        //public async Task<KhachHang> LayID(int ID)
+        //{
+        //    return new KhachHang((await Val.Lay(ID)).Rows[0]);
+        //}
+
         public async Task<List<KhachHang>> LayLst()
         {
             List<KhachHang> lst = new List<KhachHang>();
