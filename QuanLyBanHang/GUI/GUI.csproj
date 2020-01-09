@@ -82,6 +82,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmTaoDonHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTaoDonHang.Designer.cs">
+      <DependentUpon>frmTaoDonHang.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +113,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmTaoDonHang.resx">
+      <DependentUpon>frmTaoDonHang.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\DTO.CTHD.datasource" />
     <None Include="Properties\DataSources\DTO.Hang.datasource" />
     <None Include="Properties\DataSources\DTO.HoaDon.datasource" />

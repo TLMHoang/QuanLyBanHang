@@ -133,6 +133,7 @@
             this.btnBan.TabIndex = 0;
             this.btnBan.Text = "Bán";
             this.btnBan.UseVisualStyleBackColor = true;
+            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
             // 
             // btnQuanLy
             // 
@@ -141,7 +142,7 @@
             this.btnQuanLy.Name = "btnQuanLy";
             this.btnQuanLy.Size = new System.Drawing.Size(155, 48);
             this.btnQuanLy.TabIndex = 1;
-            this.btnQuanLy.Text = "Quản lý";
+            this.btnQuanLy.Text = "&Quản lý";
             this.btnQuanLy.UseVisualStyleBackColor = true;
             this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
             // 

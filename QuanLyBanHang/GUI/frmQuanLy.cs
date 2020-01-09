@@ -49,6 +49,14 @@ namespace GUI
             bsTaiKhoan.ResumeBinding();
 
             tcQuanLy.ResumeLayout();
+
+            //for (int i = 0; i < dgvHang.RowCount; i++)
+            //{
+
+            //    dgvHang.Rows[i].Cells["GiaBan"].Value = Convert.ToInt32(dgvHang.Rows[i].Cells["GiaBan"].Value) / 1000;
+            //    dgvHang.Rows[i].Cells["GiaNhap"].Value = Convert.ToInt32(dgvHang.Rows[i].Cells["GiaNhap"].Value) / 1000;
+
+            //}
         }
 
         #region Hang

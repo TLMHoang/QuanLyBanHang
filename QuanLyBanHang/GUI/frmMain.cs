@@ -80,5 +80,11 @@ namespace GUI
             Program.lstHang = await new HangBAL().LayLst();
             bsHang.DataSource = Program.lstHang.Where(p => p.SoLuong <= 5);
         }
+
+        private void btnBan_Click(object sender, EventArgs e)
+        {
+            frmTaoDonHang f = new frmTaoDonHang();
+            f.ShowDialog();
+        }
     }
 }

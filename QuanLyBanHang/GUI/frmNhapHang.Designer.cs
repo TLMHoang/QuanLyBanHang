@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.txtFind = new System.Windows.Forms.TextBox();
             this.dgvDanhSach = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsHang = new System.Windows.Forms.BindingSource(this.components);
-            this.txtFind = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.numSoLuong = new System.Windows.Forms.TextBox();
             this.btnCapNhap = new System.Windows.Forms.Button();
@@ -88,6 +88,17 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(405, 140);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
+            // txtFind
+            // 
+            this.txtFind.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtFind.Location = new System.Drawing.Point(0, 0);
+            this.txtFind.Margin = new System.Windows.Forms.Padding(0);
+            this.txtFind.Name = "txtFind";
+            this.txtFind.Size = new System.Drawing.Size(365, 26);
+            this.txtFind.TabIndex = 0;
+            this.txtFind.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
+            // 
             // dgvDanhSach
             // 
             this.dgvDanhSach.AutoGenerateColumns = false;
@@ -100,11 +111,11 @@
             this.dgvDanhSach.DataSource = this.bsHang;
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDanhSach.GridColor = System.Drawing.SystemColors.Control;
-            this.dgvDanhSach.Location = new System.Drawing.Point(2, 30);
-            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvDanhSach.Location = new System.Drawing.Point(0, 28);
+            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(0);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.ReadOnly = true;
-            this.dgvDanhSach.Size = new System.Drawing.Size(401, 108);
+            this.dgvDanhSach.Size = new System.Drawing.Size(405, 112);
             this.dgvDanhSach.TabIndex = 1;
             this.dgvDanhSach.DoubleClick += new System.EventHandler(this.dgvDanhSach_DoubleClick);
             this.dgvDanhSach.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvDanhSach_KeyUp);
@@ -128,17 +139,6 @@
             // bsHang
             // 
             this.bsHang.DataSource = typeof(DTO.Hang);
-            // 
-            // txtFind
-            // 
-            this.txtFind.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtFind.Location = new System.Drawing.Point(2, 2);
-            this.txtFind.Margin = new System.Windows.Forms.Padding(2);
-            this.txtFind.Name = "txtFind";
-            this.txtFind.Size = new System.Drawing.Size(361, 26);
-            this.txtFind.TabIndex = 0;
-            this.txtFind.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.txtFind.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtFind_KeyUp);
             // 
             // button1
             // 
@@ -189,11 +189,15 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(518, 140);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmNhapHang";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập Hàng";
             this.Load += new System.EventHandler(this.frmNhapHang_Load);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmNhapHang_KeyUp);

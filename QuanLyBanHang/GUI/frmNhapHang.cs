@@ -18,6 +18,8 @@ namespace GUI
         public frmNhapHang()
         {
             InitializeComponent();
+            dgvDanhSach.ColumnHeadersVisible = false;
+            dgvDanhSach.RowHeadersVisible = false;
         }
 
         private async void frmNhapHang_Load(object sender, EventArgs e)
@@ -59,6 +61,10 @@ namespace GUI
                 this.AcceptButton = btnCapNhap;
                 btnCapNhap.Enabled = true;
             }
+            if (e.KeyCode == Keys.Escape)
+            {
+                button1_Click_1(null, null);
+            }
         }
 
         private void dgvDanhSach_KeyUp(object sender, KeyEventArgs e)
@@ -77,6 +83,10 @@ namespace GUI
                 {
                     txtFind.Focus();
                 }
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                button1_Click_1(null, null);
             }
         }
 
@@ -117,7 +127,11 @@ namespace GUI
                     e.Handled = false;
                 }
             }
-            
+            if (e.KeyChar == (char)Keys.Escape)
+            {
+                button1_Click_1(null, null);
+            }
+
         }
 
         private void dgvDanhSach_DoubleClick(object sender, EventArgs e)
