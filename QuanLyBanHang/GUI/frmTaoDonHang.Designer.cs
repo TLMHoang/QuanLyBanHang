@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,8 +56,8 @@
             this.chbGiaSi = new System.Windows.Forms.CheckBox();
             this.txtGiaSi = new System.Windows.Forms.TextBox();
             this.btnNhapGiaSi = new System.Windows.Forms.Button();
-            this.btnHoanThanh = new System.Windows.Forms.Button();
             this.btnTroLai = new System.Windows.Forms.Button();
+            this.btnHoanThanh = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
@@ -72,7 +70,7 @@
             // 
             // bsHang
             // 
-            this.bsHang.DataSource = typeof(DTO.Hang);
+            this.bsHang.DataSource = typeof(void);
             // 
             // tableLayoutPanel1
             // 
@@ -129,9 +127,6 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.ColumnHeadersVisible = false;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.tenHangDataGridViewTextBoxColumn});
             this.tableLayoutPanel1.SetColumnSpan(this.dataGridView1, 2);
             this.dataGridView1.DataSource = this.bsHang;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -143,29 +138,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(675, 208);
             this.dataGridView1.TabIndex = 0;
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "Mã";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // tenHangDataGridViewTextBoxColumn
-            // 
-            this.tenHangDataGridViewTextBoxColumn.DataPropertyName = "TenHang";
-            this.tenHangDataGridViewTextBoxColumn.HeaderText = "Tên Hàng";
-            this.tenHangDataGridViewTextBoxColumn.Name = "tenHangDataGridViewTextBoxColumn";
-            this.tenHangDataGridViewTextBoxColumn.Width = 550;
-            // 
             // dataGridView2
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -334,7 +316,7 @@
             // 
             // bsNhanVien
             // 
-            this.bsNhanVien.DataSource = typeof(DTO.NhanVien);
+            this.bsNhanVien.DataSource = typeof(void);
             // 
             // label2
             // 
@@ -391,6 +373,18 @@
             this.btnNhapGiaSi.Text = "Lưu Giá Sỉ";
             this.btnNhapGiaSi.UseVisualStyleBackColor = true;
             // 
+            // btnTroLai
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.btnTroLai, 2);
+            this.btnTroLai.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnTroLai.Location = new System.Drawing.Point(685, 404);
+            this.btnTroLai.Margin = new System.Windows.Forms.Padding(10);
+            this.btnTroLai.Name = "btnTroLai";
+            this.btnTroLai.Size = new System.Drawing.Size(318, 59);
+            this.btnTroLai.TabIndex = 1;
+            this.btnTroLai.Text = "Trở lại";
+            this.btnTroLai.UseVisualStyleBackColor = true;
+            // 
             // btnHoanThanh
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.btnHoanThanh, 2);
@@ -403,18 +397,6 @@
             this.btnHoanThanh.TabIndex = 2;
             this.btnHoanThanh.Text = "&Hoàn Thành";
             this.btnHoanThanh.UseVisualStyleBackColor = true;
-            // 
-            // btnTroLai
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.btnTroLai, 2);
-            this.btnTroLai.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnTroLai.Location = new System.Drawing.Point(685, 404);
-            this.btnTroLai.Margin = new System.Windows.Forms.Padding(10);
-            this.btnTroLai.Name = "btnTroLai";
-            this.btnTroLai.Size = new System.Drawing.Size(318, 59);
-            this.btnTroLai.TabIndex = 1;
-            this.btnTroLai.Text = "Trở lại";
-            this.btnTroLai.UseVisualStyleBackColor = true;
             // 
             // btnHuy
             // 
