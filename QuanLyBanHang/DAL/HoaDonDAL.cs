@@ -28,6 +28,11 @@ namespace DAL
             return await ExecuteQuery("LayHoaDon");
         }
 
+        public async Task<DataTable> Lay(byte TT)
+        {
+            return await ExecuteQuery("LayHoaDon", new SqlParameter("@TinhTrang", SqlDbType.Bit) { Value = TT });
+        }
+
         public async Task<int> Them(HoaDon obj)
         {
             return await ExecuteNonQuery(
@@ -35,8 +40,7 @@ namespace DAL
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
                 new SqlParameter("@IDKhachHang", SqlDbType.Int) { Value = obj.IDKhachHang },
                 new SqlParameter("@IDNhanVien", SqlDbType.Int) { Value = obj.IDNhanVien },
-                new SqlParameter("@Ngay", SqlDbType.DateTime) { Value = obj.Ngay },
-                new SqlParameter("@TinhTrang", SqlDbType.Bit) { Value = obj.TinhTrang }
+                new SqlParameter("@Ngay", SqlDbType.DateTime) { Value = obj.Ngay }
                 );
         }
 

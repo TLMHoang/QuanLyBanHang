@@ -22,10 +22,10 @@ namespace BAL
             return await Val.Lay();
         }
 
-        //public async Task<CTHD> LayID(int ID)
-        //{
-        //    return new CTHD((await Val.Lay(ID)).Rows[0]);
-        //}
+        public async Task<DataTable> LayID(int ID)
+        {
+            return await Val.Lay(ID);
+        }
 
         public async Task<List<CTHD>> LayLst()
         {

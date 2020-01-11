@@ -16,6 +16,7 @@ namespace DTO
         public byte? TinhTrang { get; set; }
 
 
+
         public HoaDon() { ID = -1; IDKhachHang = -1; IDNhanVien = -1; Ngay = DateTime.Now; TinhTrang = 0; }
 
         public HoaDon(DataRow dr)
@@ -27,7 +28,7 @@ namespace DTO
             TinhTrang = Convert.ToByte(dr["TinhTrang"]);
         }
 
-        public HoaDon(int iD, int iDKhachHang, int iDNhanVien, DateTime? ngay, byte? tinhTrang)
+        public HoaDon(int iD, int iDKhachHang, int iDNhanVien, DateTime? ngay, byte? tinhTrang, byte? checkNull)
         {
             ID = iD;
             IDKhachHang = iDKhachHang;

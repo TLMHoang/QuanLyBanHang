@@ -9,6 +9,7 @@ namespace BAL
 {
     interface CInterface<T>
     {
+        //Task<List<T>> LayLst(DataTable val);
         Task<List<T>> LayLst();
         Task<DataTable> LayDT();
         //Task<T> LayID(int ID);

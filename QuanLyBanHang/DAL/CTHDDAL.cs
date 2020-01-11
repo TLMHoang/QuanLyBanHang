@@ -27,6 +27,11 @@ namespace DAL
             return await ExecuteQuery("LayCTHD");
         }
 
+        public async Task<DataTable> Lay(int IDHoaDon)
+        {
+            return await ExecuteQuery("LayCTHD", new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = IDHoaDon });
+        }
+
         public async Task<int> Them(CTHD obj)
         {
             return await ExecuteNonQuery(

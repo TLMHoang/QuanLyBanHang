@@ -27,8 +27,16 @@ namespace GUI
             {
                 this.Close();
             }
-            Program.lstHang = await new HangBAL().LayLst();
+            await LoadDataALL();
             bsHang.DataSource = Program.lstHang.Where(p => p.SoLuong <= 5);
+        }
+
+        public async Task<int> LoadDataALL()
+        {
+            Program.lstHang = await new HangBAL().LayLst();
+            Program.DTHang = await new HangBAL().LayDT();
+
+            return -1;
         }
 
         private void thoátỨngDụngToolStripMenuItem_Click(object sender, EventArgs e)
@@ -69,7 +77,7 @@ namespace GUI
         {
             frmQuanLy f = new frmQuanLy();
             f.ShowDialog();
-            Program.lstHang = await new HangBAL().LayLst();
+            Program.lstHang = await new HangBAL().LayLst(Program.DTHang);
             bsHang.DataSource = Program.lstHang.Where(p => p.SoLuong <= 5);
         }
 
@@ -77,7 +85,7 @@ namespace GUI
         {
             frmNhapHang f = new frmNhapHang();
             f.ShowDialog();
-            Program.lstHang = await new HangBAL().LayLst();
+            Program.lstHang = await new HangBAL().LayLst(Program.DTHang);
             bsHang.DataSource = Program.lstHang.Where(p => p.SoLuong <= 5);
         }
 

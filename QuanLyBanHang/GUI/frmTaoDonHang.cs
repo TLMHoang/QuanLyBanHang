@@ -20,15 +20,16 @@ namespace GUI
 
         private async void frmTaoDonHang_Load(object sender, EventArgs e)
         {
-            //lstvHang.SuspendLayout();
+            dgvHang.SuspendLayout();
 
             bsHang.SuspendBinding();
 
             bsHang.DataSource = await new HangBAL().LayDT();
+            bsNhanVien.DataSource = await new NhanVienBAL().LayDT();
 
             bsHang.ResumeBinding();
 
-            //lstvHang.ResumeLayout();
+            dgvHang.ResumeLayout();
         }
 
         private void button5_Click(object sender, EventArgs e)

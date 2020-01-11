@@ -38,6 +38,17 @@ namespace BAL
             return lst;
         }
 
+        public Task<List<Hang>> LayLst(DataTable Val)
+        {
+            List<Hang> lst = new List<Hang>();
+            foreach (DataRow dr in Val.Rows)
+            {
+                lst.Add(new Hang(dr));
+            }
+
+            return Task.FromResult(lst);
+        }
+
         public async Task<int> Them(Hang obj)
         {
             return await Val.Them(obj);

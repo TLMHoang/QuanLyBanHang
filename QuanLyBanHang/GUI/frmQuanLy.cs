@@ -37,7 +37,7 @@ namespace GUI
             bsKhachHang.SuspendBinding();
             bsTaiKhoan.SuspendBinding();
 
-            bsHang.DataSource = await hang.LayDT();
+            bsHang.DataSource = Program.DTHang;;
             bsKhachHang.DataSource = await khachHang.LayDT();
             bsNhanVien.DataSource = await nhanVien.LayDT();
             bsTaiKhoan.DataSource = await taiKhoan.LayDT();
@@ -90,12 +90,13 @@ namespace GUI
             {
                 //Add 
                 await hang.Them(h);
-                bsHang.DataSource = await hang.LayDT();
+                bsHang.DataSource = Program.DTHang = await hang.LayDT();
             }
             else
             {
                 //update
                 await hang.CapNhap(h);
+                bsHang.DataSource = Program.DTHang = await hang.LayDT();
             }
         }
 
