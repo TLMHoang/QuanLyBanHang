@@ -18,7 +18,6 @@ namespace DAL
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
                 new SqlParameter("@TenHang", SqlDbType.NVarChar) { Value = obj.TenHang },
                 new SqlParameter("@GiaBan", SqlDbType.NVarChar) { Value = obj.GiaBan },
-                new SqlParameter("@GiaSi", SqlDbType.NVarChar) { Value = obj.GiaSi },
                 new SqlParameter("@GiaNhap", SqlDbType.NVarChar) { Value = obj.GiaNhap },
                 new SqlParameter("@SoLuong", SqlDbType.Int) { Value = obj.SoLuong }
                 );
@@ -36,7 +35,6 @@ namespace DAL
                 new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID },
                 new SqlParameter("@TenHang", SqlDbType.NVarChar) { Value = obj.TenHang },
                 new SqlParameter("@GiaBan", SqlDbType.NVarChar) { Value = obj.GiaBan },
-                new SqlParameter("@GiaSi", SqlDbType.NVarChar) { Value = obj.GiaSi },
                 new SqlParameter("@GiaNhap", SqlDbType.NVarChar) { Value = obj.GiaNhap },
                 new SqlParameter("@SoLuong", SqlDbType.Int) { Value = obj.SoLuong }
                 );

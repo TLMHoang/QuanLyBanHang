@@ -85,7 +85,7 @@ namespace GUI
         {
             frmNhapHang f = new frmNhapHang();
             f.ShowDialog();
-            Program.lstHang = await new HangBAL().LayLst(Program.DTHang);
+            Program.lstHang = await new HangBAL().LayLst();
             bsHang.DataSource = Program.lstHang.Where(p => p.SoLuong <= 5);
         }
 

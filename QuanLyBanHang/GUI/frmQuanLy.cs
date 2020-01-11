@@ -37,7 +37,7 @@ namespace GUI
             bsKhachHang.SuspendBinding();
             bsTaiKhoan.SuspendBinding();
 
-            bsHang.DataSource = Program.DTHang;;
+            bsHang.DataSource = await hang.LayDT() ;
             bsKhachHang.DataSource = await khachHang.LayDT();
             bsNhanVien.DataSource = await nhanVien.LayDT();
             bsTaiKhoan.DataSource = await taiKhoan.LayDT();
@@ -68,6 +68,13 @@ namespace GUI
 
         private async void dgvHang_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex == 2 || e.ColumnIndex == 3)
+            {
+                if ((sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() != "")
+                {
+                    (sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex].Value = Convert.ToInt32((sender as DataGridView).Rows[e.RowIndex].Cells[e.ColumnIndex].Value) * 1000;
+                }
+            }
             DataRowView drv = ((sender as DataGridView).Rows[e.RowIndex].DataBoundItem as DataRowView);
             if (drv == null)
             {
@@ -76,16 +83,13 @@ namespace GUI
 
             for (int i = 1; i < drv.Row.ItemArray.Length; i++)
             {
-                if (i != 3)
-                {
                     if (string.IsNullOrEmpty(drv.Row.ItemArray[i].ToString()))
                     {
                         return;
                     }
-                }
 
             }
-            Hang h = new Hang(Convert.ToInt32(drv.Row.ItemArray[0]), drv.Row.ItemArray[1].ToString(), Convert.ToInt32(drv.Row.ItemArray[2]) * 1000, 0, Convert.ToInt32(drv.Row.ItemArray[4]) * 1000, Convert.ToInt32(drv.Row.ItemArray[5]));
+            Hang h = new Hang(Convert.ToInt32(drv.Row.ItemArray[0]), drv.Row.ItemArray[1].ToString(), Convert.ToInt32(drv.Row.ItemArray[2]), Convert.ToInt32(drv.Row.ItemArray[3]), Convert.ToInt32(drv.Row.ItemArray[4]));
             if (h.ID == -1)
             {
                 //Add 
