@@ -12,7 +12,7 @@ namespace GUI
     {
         public static TaiKhoan TK;
         public static List<Hang> lstHang = new List<Hang>();
-        public static DataTable DTHang = new DataTable();
+        public static List<HoaDon> lstHoaDon = new List<HoaDon>();
         
         public static CTHD CTiet = new CTHD();
         /// <summary>

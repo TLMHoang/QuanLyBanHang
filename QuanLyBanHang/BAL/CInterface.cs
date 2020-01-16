@@ -15,6 +15,6 @@ namespace BAL
         //Task<T> LayID(int ID);
         Task<int> Them(T obj);
         Task<int> CapNhap(T obj);
-        Task<int> Xoa(T obj);
+        Task<int> Xoa(int ID);
     }
 }

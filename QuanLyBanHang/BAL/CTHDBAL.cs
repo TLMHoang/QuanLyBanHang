@@ -22,9 +22,9 @@ namespace BAL
             return await Val.Lay();
         }
 
-        public async Task<DataTable> LayID(int ID)
+        public async Task<DataTable> LayID(int IDHoaDon, int IDHang)
         {
-            return await Val.Lay(ID);
+            return await Val.Lay(IDHoaDon, IDHang);
         }
 
         public async Task<List<CTHD>> LayLst()
@@ -43,9 +43,14 @@ namespace BAL
             return await Val.Them(obj);
         }
 
-        public async Task<int> Xoa(CTHD obj)
+        public async Task<int> Xoa(int IDHoaDon)
         {
-            return await Val.Xoa(obj);
+            return await Val.Xoa(IDHoaDon);
+        }
+
+        public async Task<int> Xoa(int IDHoaDon, int IDHang)
+        {
+            return await Val.Xoa(IDHoaDon, IDHang);
         }
     }
 }

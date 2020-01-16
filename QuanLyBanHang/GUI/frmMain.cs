@@ -34,8 +34,7 @@ namespace GUI
         public async Task<int> LoadDataALL()
         {
             Program.lstHang = await new HangBAL().LayLst();
-            Program.DTHang = await new HangBAL().LayDT();
-
+            //Program.lstHoaDon = await new HoaDonBAL().LayLst();
             return -1;
         }
 
@@ -62,7 +61,6 @@ namespace GUI
             else
             {
                 this.Visible = true;
-
             }
         }
 
@@ -77,7 +75,7 @@ namespace GUI
         {
             frmQuanLy f = new frmQuanLy();
             f.ShowDialog();
-            Program.lstHang = await new HangBAL().LayLst(Program.DTHang);
+            Program.lstHang = await new HangBAL().LayLst();
             bsHang.DataSource = Program.lstHang.Where(p => p.SoLuong <= 5);
         }
 

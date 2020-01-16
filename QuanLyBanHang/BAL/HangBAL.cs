@@ -54,9 +54,9 @@ namespace BAL
             return await Val.Them(obj);
         }
 
-        public async Task<int> Xoa(Hang obj)
+        public async Task<int> Xoa(int ID)
         {
-            return await Val.Xoa(obj);
+            return await Val.Xoa(ID);
         }
     }
 }

@@ -44,11 +44,11 @@ namespace DAL
                 );
         }
 
-        public async Task<int> Xoa(HoaDon obj)
+        public async Task<int> Xoa(int ID)
         {
             return await ExecuteNonQuery(
                 "XoaHoaDon",
-                new SqlParameter("@ID", SqlDbType.Int) { Value = obj.ID }
+                new SqlParameter("@ID", SqlDbType.Int) { Value = ID }
                 );
         }
 

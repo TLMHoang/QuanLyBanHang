@@ -38,9 +38,9 @@ namespace BAL
             return await Val.Them(obj);
         }
 
-        public async Task<int> Xoa(TaiKhoan obj)
+        public async Task<int> Xoa(int ID)
         {
-            return await Val.Xoa(obj);
+            return await Val.Xoa(ID);
         }
 
         public async Task<List<TaiKhoan>> DangNhap(string TaiKhoan, string MatKhau)

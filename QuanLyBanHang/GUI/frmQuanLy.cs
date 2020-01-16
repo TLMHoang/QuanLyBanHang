@@ -94,13 +94,13 @@ namespace GUI
             {
                 //Add 
                 await hang.Them(h);
-                bsHang.DataSource = Program.DTHang = await hang.LayDT();
+                bsHang.DataSource = await hang.LayDT();
             }
             else
             {
                 //update
                 await hang.CapNhap(h);
-                bsHang.DataSource = Program.DTHang = await hang.LayDT();
+                bsHang.DataSource = await hang.LayDT();
             }
         }
 
@@ -117,7 +117,7 @@ namespace GUI
                 if (MessageBox.Show("Bạn muốn xóa dữ liệu không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     Hang h = new Hang((e.Row.DataBoundItem as DataRowView).Row);
-                    await hang.Xoa(h);
+                    await hang.Xoa(h.ID);
                 }
                 else
                 {
@@ -194,7 +194,7 @@ namespace GUI
                 if (MessageBox.Show("Bạn muốn xóa dữ liệu không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     NhanVien val = new NhanVien((e.Row.DataBoundItem as DataRowView).Row);
-                    await nhanVien.Xoa(val);
+                    await nhanVien.Xoa(val.ID);
                 }
                 else
                 {
@@ -258,7 +258,7 @@ namespace GUI
                 if (MessageBox.Show("Bạn muốn xóa dữ liệu không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     KhachHang val = new KhachHang((e.Row.DataBoundItem as DataRowView).Row);
-                    await khachHang.Xoa(val);
+                    await khachHang.Xoa(val.ID);
                 }
                 else
                 {
@@ -326,7 +326,7 @@ namespace GUI
                 if (MessageBox.Show("Bạn muốn xóa dữ liệu không?", "Thông Báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
                     TaiKhoan val = new TaiKhoan((e.Row.DataBoundItem as DataRowView).Row);
-                    await taiKhoan.Xoa(val);
+                    await taiKhoan.Xoa(val.ID);
                 }
                 else
                 {

@@ -11,7 +11,7 @@ namespace DAL
     {
         Task<DataTable> Lay();
         Task<int> CapNhap(T obj);
-        Task<int> Xoa(T obj);
+        Task<int> Xoa(int ID);
         Task<int> Them(T obj);
     }
 }

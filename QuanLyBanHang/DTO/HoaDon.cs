@@ -10,8 +10,8 @@ namespace DTO
     public class HoaDon
     {
         public int ID { get; set; }
-        public int IDKhachHang { get; set; }
-        public int IDNhanVien { get; set; }
+        public int? IDKhachHang { get; set; }
+        public int? IDNhanVien { get; set; }
         public DateTime? Ngay { get; set; }
         public byte? TinhTrang { get; set; }
 
@@ -22,7 +22,7 @@ namespace DTO
         public HoaDon(DataRow dr)
         {
             ID = Convert.IsDBNull(dr["ID"]) ? -1 : Convert.ToInt32(dr["ID"]);
-            IDKhachHang = Convert.IsDBNull(dr["IDKhachHang"]) ? -1 : Convert.ToInt32(dr["IDKhachHang"]);
+            IDKhachHang = Convert.IsDBNull(dr["IDKhacHang"]) ? -1 : Convert.ToInt32(dr["IDKhachHang"]);
             IDNhanVien = Convert.IsDBNull(dr["IDNhanVien"]) ? -1 : Convert.ToInt32(dr["IDNhanVien"]);
             Ngay = Convert.ToDateTime(dr["Ngay"]);
             TinhTrang = Convert.ToByte(dr["TinhTrang"]);
