@@ -1,10 +1,7 @@
 ﻿using DAL;
 using DTO;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace BAL
@@ -31,6 +28,17 @@ namespace BAL
         {
             List<CTHD> lst = new List<CTHD>();
             foreach (DataRow dr in (await LayDT()).Rows)
+            {
+                lst.Add(new CTHD(dr));
+            }
+
+            return lst;
+        }
+
+        public async Task<List<CTHD>> LayLst(int IDHoaDon)
+        {
+            List<CTHD> lst = new List<CTHD>();
+            foreach (DataRow dr in (await Val.Lay(IDHoaDon, -1)).Rows)
             {
                 lst.Add(new CTHD(dr));
             }

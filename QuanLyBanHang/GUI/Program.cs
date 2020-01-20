@@ -13,8 +13,8 @@ namespace GUI
         public static TaiKhoan TK;
         public static List<Hang> lstHang = new List<Hang>();
         public static List<HoaDon> lstHoaDon = new List<HoaDon>();
-        
-        public static CTHD CTiet = new CTHD();
+        public static string FormatNumber(string s) => Convert.ToInt64(s).ToString("N0");
+        public static int UnFormatNumber(string s) => Convert.ToInt32(s.Replace(",", "").Replace(".", ""));
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

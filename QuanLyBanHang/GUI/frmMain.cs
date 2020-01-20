@@ -89,7 +89,7 @@ namespace GUI
 
         private void btnBan_Click(object sender, EventArgs e)
         {
-            frmTaoDonHang f = new frmTaoDonHang();
+            frmTaoDonHange f = new frmTaoDonHange();
             f.ShowDialog();
         }
     }

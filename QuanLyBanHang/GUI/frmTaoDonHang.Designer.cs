@@ -1,6 +1,6 @@
 ﻿namespace GUI
 {
-    partial class frmTaoDonHang
+    partial class frmTaoDonHange
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtHang = new System.Windows.Forms.TextBox();
             this.dgvHang = new System.Windows.Forms.DataGridView();
@@ -45,35 +44,32 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label3 = new System.Windows.Forms.Label();
             this.lblThanhTien = new System.Windows.Forms.Label();
-            this.btnChonDon = new System.Windows.Forms.Button();
-            this.btnKhachHang = new System.Windows.Forms.Button();
-            this.lblHoaDon = new System.Windows.Forms.Label();
-            this.lblKhachHang = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.bsNhanVien = new System.Windows.Forms.BindingSource(this.components);
+            this.cbxNhanVien = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.chbGiaSi = new System.Windows.Forms.CheckBox();
-            this.txtGiaSi = new System.Windows.Forms.TextBox();
-            this.btnNhapGiaSi = new System.Windows.Forms.Button();
             this.btnTroLai = new System.Windows.Forms.Button();
             this.btnHoanThanh = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNhan = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTra = new System.Windows.Forms.TextBox();
+            this.lblKhachHang = new System.Windows.Forms.Label();
+            this.btnKhachHang = new System.Windows.Forms.Button();
+            this.chbGiaSi = new System.Windows.Forms.CheckBox();
+            this.IDHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHang)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsNhanVien)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             this.SuspendLayout();
-            // 
-            // bsHang
-            // 
-            this.bsHang.DataSource = typeof(DTO.Hang);
             // 
             // tableLayoutPanel1
             // 
@@ -87,17 +83,16 @@
             this.tableLayoutPanel1.Controls.Add(this.dgvDanhSachHang, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.button7, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 0, 8);
-            this.tableLayoutPanel1.Controls.Add(this.btnChonDon, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.btnKhachHang, 3, 3);
-            this.tableLayoutPanel1.Controls.Add(this.lblHoaDon, 2, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblKhachHang, 2, 3);
-            this.tableLayoutPanel1.Controls.Add(this.comboBox1, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.cbxNhanVien, 2, 1);
             this.tableLayoutPanel1.Controls.Add(this.label2, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnNhapGiaSi, 3, 4);
             this.tableLayoutPanel1.Controls.Add(this.btnTroLai, 2, 6);
             this.tableLayoutPanel1.Controls.Add(this.btnHoanThanh, 2, 7);
             this.tableLayoutPanel1.Controls.Add(this.btnLuu, 2, 5);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 2, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 3, 2);
+            this.tableLayoutPanel1.Controls.Add(this.lblKhachHang, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnKhachHang, 3, 4);
+            this.tableLayoutPanel1.Controls.Add(this.chbGiaSi, 2, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -131,14 +126,17 @@
             // 
             // dgvHang
             // 
+            this.dgvHang.AllowUserToAddRows = false;
+            this.dgvHang.AllowUserToResizeColumns = false;
+            this.dgvHang.AllowUserToResizeRows = false;
             this.dgvHang.AutoGenerateColumns = false;
             this.dgvHang.BackgroundColor = System.Drawing.Color.White;
             this.dgvHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHang.ColumnHeadersVisible = false;
             this.dgvHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.tenHangDataGridViewTextBoxColumn,
-            this.dataGridViewTextBoxColumn3});
+            this.IDHang,
+            this.TenHang,
+            this.SL});
             this.tableLayoutPanel1.SetColumnSpan(this.dgvHang, 2);
             this.dgvHang.DataSource = this.bsHang;
             this.dgvHang.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -151,10 +149,11 @@
             this.dgvHang.Size = new System.Drawing.Size(675, 208);
             this.dgvHang.TabIndex = 0;
             this.dgvHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_CellDoubleClick);
-            this.dgvHang.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dgvHang_KeyUp);
+            this.dgvHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvHang_KeyUp);
             // 
             // dgvDanhSachHang
             // 
+            this.dgvDanhSachHang.AllowUserToAddRows = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -184,7 +183,7 @@
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "ID";
+            this.ID.DataPropertyName = "IDHang";
             this.ID.HeaderText = "Mã";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
@@ -200,6 +199,7 @@
             // 
             // SoLuong
             // 
+            this.SoLuong.DataPropertyName = "SL";
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.Name = "SoLuong";
             this.SoLuong.ReadOnly = true;
@@ -207,6 +207,7 @@
             // 
             // ThanhTien
             // 
+            this.ThanhTien.DataPropertyName = "ThanhTien";
             this.ThanhTien.HeaderText = "Thành Tiền";
             this.ThanhTien.Name = "ThanhTien";
             this.ThanhTien.ReadOnly = true;
@@ -240,6 +241,7 @@
             this.button7.TabIndex = 8;
             this.button7.Text = "X";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -280,66 +282,20 @@
             this.lblThanhTien.Text = "0";
             this.lblThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnChonDon
+            // cbxNhanVien
             // 
-            this.btnChonDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnChonDon.Location = new System.Drawing.Point(846, 81);
-            this.btnChonDon.Name = "btnChonDon";
-            this.btnChonDon.Size = new System.Drawing.Size(164, 73);
-            this.btnChonDon.TabIndex = 3;
-            this.btnChonDon.Text = "&Chọn Đơn";
-            this.btnChonDon.UseVisualStyleBackColor = true;
-            this.btnChonDon.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKhachHang.Location = new System.Drawing.Point(846, 160);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(164, 73);
-            this.btnKhachHang.TabIndex = 3;
-            this.btnKhachHang.Text = "&Khách Hàng";
-            this.btnKhachHang.UseVisualStyleBackColor = true;
-            // 
-            // lblHoaDon
-            // 
-            this.lblHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblHoaDon.Location = new System.Drawing.Point(678, 78);
-            this.lblHoaDon.Name = "lblHoaDon";
-            this.lblHoaDon.Size = new System.Drawing.Size(162, 79);
-            this.lblHoaDon.TabIndex = 11;
-            this.lblHoaDon.Text = "Mã Hóa Đơn: ";
-            this.lblHoaDon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblKhachHang
-            // 
-            this.lblKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblKhachHang.Location = new System.Drawing.Point(678, 157);
-            this.lblKhachHang.Name = "lblKhachHang";
-            this.lblKhachHang.Size = new System.Drawing.Size(162, 79);
-            this.lblKhachHang.TabIndex = 11;
-            this.lblKhachHang.Text = "Tên Khách Hàng: ";
-            this.lblKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.comboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.tableLayoutPanel1.SetColumnSpan(this.comboBox1, 2);
-            this.comboBox1.DataSource = this.bsNhanVien;
-            this.comboBox1.DisplayMember = "Ten";
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(678, 41);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 13, 3, 3);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(332, 28);
-            this.comboBox1.TabIndex = 7;
-            this.comboBox1.ValueMember = "Ten";
-            // 
-            // bsNhanVien
-            // 
-            this.bsNhanVien.DataSource = typeof(DTO.NhanVien);
+            this.cbxNhanVien.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbxNhanVien.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.tableLayoutPanel1.SetColumnSpan(this.cbxNhanVien, 2);
+            this.cbxNhanVien.DisplayMember = "Ten";
+            this.cbxNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbxNhanVien.FormattingEnabled = true;
+            this.cbxNhanVien.Location = new System.Drawing.Point(678, 41);
+            this.cbxNhanVien.Margin = new System.Windows.Forms.Padding(3, 13, 3, 3);
+            this.cbxNhanVien.Name = "cbxNhanVien";
+            this.cbxNhanVien.Size = new System.Drawing.Size(332, 28);
+            this.cbxNhanVien.TabIndex = 7;
+            this.cbxNhanVien.ValueMember = "Ten";
             // 
             // label2
             // 
@@ -352,50 +308,6 @@
             this.label2.Text = "Người bán";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.chbGiaSi, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.txtGiaSi, 0, 1);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(675, 236);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(168, 79);
-            this.tableLayoutPanel2.TabIndex = 12;
-            // 
-            // chbGiaSi
-            // 
-            this.chbGiaSi.Location = new System.Drawing.Point(30, 3);
-            this.chbGiaSi.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
-            this.chbGiaSi.Name = "chbGiaSi";
-            this.chbGiaSi.Size = new System.Drawing.Size(135, 33);
-            this.chbGiaSi.TabIndex = 0;
-            this.chbGiaSi.Text = "Bán Giá &Sỉ";
-            this.chbGiaSi.UseVisualStyleBackColor = true;
-            // 
-            // txtGiaSi
-            // 
-            this.txtGiaSi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGiaSi.Location = new System.Drawing.Point(3, 42);
-            this.txtGiaSi.Name = "txtGiaSi";
-            this.txtGiaSi.Size = new System.Drawing.Size(162, 26);
-            this.txtGiaSi.TabIndex = 1;
-            // 
-            // btnNhapGiaSi
-            // 
-            this.btnNhapGiaSi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNhapGiaSi.Location = new System.Drawing.Point(846, 239);
-            this.btnNhapGiaSi.Name = "btnNhapGiaSi";
-            this.btnNhapGiaSi.Size = new System.Drawing.Size(164, 73);
-            this.btnNhapGiaSi.TabIndex = 1;
-            this.btnNhapGiaSi.Text = "Lưu Giá Sỉ";
-            this.btnNhapGiaSi.UseVisualStyleBackColor = true;
-            // 
             // btnTroLai
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.btnTroLai, 2);
@@ -407,6 +319,7 @@
             this.btnTroLai.TabIndex = 1;
             this.btnTroLai.Text = "Trở lại";
             this.btnTroLai.UseVisualStyleBackColor = true;
+            this.btnTroLai.Click += new System.EventHandler(this.btnTroLai_Click);
             // 
             // btnHoanThanh
             // 
@@ -420,6 +333,7 @@
             this.btnHoanThanh.TabIndex = 2;
             this.btnHoanThanh.Text = "&Hoàn Thành";
             this.btnHoanThanh.UseVisualStyleBackColor = true;
+            this.btnHoanThanh.Click += new System.EventHandler(this.btnHoanThanh_Click);
             // 
             // btnLuu
             // 
@@ -434,31 +348,143 @@
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnHuy_Click);
             // 
-            // iDDataGridViewTextBoxColumn
+            // tableLayoutPanel4
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.iDDataGridViewTextBoxColumn.Width = 50;
+            this.tableLayoutPanel4.ColumnCount = 1;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.label1, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.txtNhan, 0, 1);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(675, 78);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 2;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(168, 79);
+            this.tableLayoutPanel4.TabIndex = 13;
             // 
-            // tenHangDataGridViewTextBoxColumn
+            // label1
             // 
-            this.tenHangDataGridViewTextBoxColumn.DataPropertyName = "TenHang";
-            this.tenHangDataGridViewTextBoxColumn.HeaderText = "TenHang";
-            this.tenHangDataGridViewTextBoxColumn.Name = "tenHangDataGridViewTextBoxColumn";
-            this.tenHangDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tenHangDataGridViewTextBoxColumn.Width = 560;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(162, 39);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Ship nhận";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn3
+            // txtNhan
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "SoLuong";
-            this.dataGridViewTextBoxColumn3.HeaderText = "SoLuong";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            this.dataGridViewTextBoxColumn3.Width = 60;
+            this.txtNhan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNhan.Location = new System.Drawing.Point(3, 46);
+            this.txtNhan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.txtNhan.Name = "txtNhan";
+            this.txtNhan.Size = new System.Drawing.Size(162, 26);
+            this.txtNhan.TabIndex = 1;
+            this.txtNhan.Text = "0";
+            this.txtNhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhan_KeyPress);
+            this.txtNhan.Leave += new System.EventHandler(this.txtTra_Leave);
             // 
-            // frmTaoDonHang
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 1;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.label4, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.txtTra, 0, 1);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(843, 78);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 2;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(170, 79);
+            this.tableLayoutPanel5.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label4.Location = new System.Drawing.Point(3, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(164, 39);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Ship Trả";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtTra
+            // 
+            this.txtTra.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtTra.Location = new System.Drawing.Point(3, 46);
+            this.txtTra.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
+            this.txtTra.Name = "txtTra";
+            this.txtTra.Size = new System.Drawing.Size(164, 26);
+            this.txtTra.TabIndex = 1;
+            this.txtTra.Text = "0";
+            this.txtTra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhan_KeyPress);
+            this.txtTra.Leave += new System.EventHandler(this.txtTra_Leave);
+            // 
+            // lblKhachHang
+            // 
+            this.lblKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblKhachHang.Location = new System.Drawing.Point(678, 236);
+            this.lblKhachHang.Name = "lblKhachHang";
+            this.lblKhachHang.Size = new System.Drawing.Size(162, 79);
+            this.lblKhachHang.TabIndex = 11;
+            this.lblKhachHang.Text = "Tên Khách Hàng: ";
+            this.lblKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnKhachHang
+            // 
+            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKhachHang.Location = new System.Drawing.Point(846, 239);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Size = new System.Drawing.Size(164, 73);
+            this.btnKhachHang.TabIndex = 3;
+            this.btnKhachHang.Text = "&Khách Hàng";
+            this.btnKhachHang.UseVisualStyleBackColor = true;
+            // 
+            // chbGiaSi
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.chbGiaSi, 2);
+            this.chbGiaSi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.chbGiaSi.Location = new System.Drawing.Point(705, 160);
+            this.chbGiaSi.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
+            this.chbGiaSi.Name = "chbGiaSi";
+            this.chbGiaSi.Size = new System.Drawing.Size(305, 73);
+            this.chbGiaSi.TabIndex = 0;
+            this.chbGiaSi.Text = "Bán Giá &Sỉ";
+            this.chbGiaSi.UseVisualStyleBackColor = true;
+            // 
+            // IDHang
+            // 
+            this.IDHang.DataPropertyName = "ID";
+            this.IDHang.HeaderText = "ID";
+            this.IDHang.Name = "IDHang";
+            this.IDHang.ReadOnly = true;
+            this.IDHang.Width = 50;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.HeaderText = "TenHang";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
+            this.TenHang.Width = 555;
+            // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "SoLuong";
+            this.SL.HeaderText = "SoLuong";
+            this.SL.Name = "SL";
+            this.SL.ReadOnly = true;
+            this.SL.Width = 60;
+            // 
+            // bsHang
+            // 
+            this.bsHang.DataSource = typeof(DTO.Hang);
+            // 
+            // frmTaoDonHange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -466,62 +492,57 @@
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "frmTaoDonHang";
+            this.Name = "frmTaoDonHange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TaoDonHang";
+            this.Text = "Tạo Đơn Hàng";
             this.Load += new System.EventHandler(this.frmTaoDonHang_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHang)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsNhanVien)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource bsHang;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.DataGridView dgvHang;
         private System.Windows.Forms.DataGridView dgvDanhSachHang;
-        private System.Windows.Forms.Button btnNhapGiaSi;
-        private System.Windows.Forms.Button btnChonDon;
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.Button btnHoanThanh;
         private System.Windows.Forms.Button btnKhachHang;
         private System.Windows.Forms.Button btnTroLai;
         private System.Windows.Forms.TextBox txtHang;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource bsNhanVien;
+        private System.Windows.Forms.ComboBox cbxNhanVien;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.CheckBox chbGiaSi;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblHoaDon;
         private System.Windows.Forms.Label lblKhachHang;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.TextBox txtGiaSi;
         private System.Windows.Forms.Label lblThanhTien;
+        private System.Windows.Forms.BindingSource bsHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
         private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
         private System.Windows.Forms.DataGridViewButtonColumn Sua;
         private System.Windows.Forms.DataGridViewButtonColumn Xoa;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtNhan;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtTra;
         private System.Windows.Forms.DataGridViewTextBoxColumn IDHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenHangDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
     }
 }

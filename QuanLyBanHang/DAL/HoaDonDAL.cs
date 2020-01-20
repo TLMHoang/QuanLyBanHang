@@ -30,7 +30,7 @@ namespace DAL
 
         public async Task<DataTable> Lay(byte TT)
         {
-            return await ExecuteQuery("LayHoaDon", new SqlParameter("@TinhTrang", SqlDbType.Bit) { Value = TT });
+            return await ExecuteQuery("LayHoaDonNoF", new SqlParameter("@TinhTrang", SqlDbType.Bit) { Value = TT });
         }
 
         public async Task<int> Them(HoaDon obj)

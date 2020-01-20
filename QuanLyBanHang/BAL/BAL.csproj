@@ -48,6 +48,7 @@
     <Compile Include="HoaDonBAL.cs" />
     <Compile Include="KhachHangBAL.cs" />
     <Compile Include="NhanVienBAL.cs" />
+    <Compile Include="ShipBAL.cs" />
     <Compile Include="TaiKhoanBAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
