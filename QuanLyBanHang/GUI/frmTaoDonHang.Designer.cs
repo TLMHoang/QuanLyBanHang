@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtHang = new System.Windows.Forms.TextBox();
             this.dgvHang = new System.Windows.Forms.DataGridView();
+            this.IDHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.dgvDanhSachHang = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,19 +60,16 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtTra = new System.Windows.Forms.TextBox();
             this.lblKhachHang = new System.Windows.Forms.Label();
-            this.btnKhachHang = new System.Windows.Forms.Button();
             this.chbGiaSi = new System.Windows.Forms.CheckBox();
-            this.IDHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
+            this.btnKhachHang = new System.Windows.Forms.Button();
+            this.btnXoaDon = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHang)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -90,9 +91,10 @@
             this.tableLayoutPanel1.Controls.Add(this.btnLuu, 2, 5);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 2, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel5, 3, 2);
-            this.tableLayoutPanel1.Controls.Add(this.lblKhachHang, 2, 4);
-            this.tableLayoutPanel1.Controls.Add(this.btnKhachHang, 3, 4);
-            this.tableLayoutPanel1.Controls.Add(this.chbGiaSi, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.lblKhachHang, 2, 3);
+            this.tableLayoutPanel1.Controls.Add(this.chbGiaSi, 2, 4);
+            this.tableLayoutPanel1.Controls.Add(this.btnKhachHang, 3, 3);
+            this.tableLayoutPanel1.Controls.Add(this.btnXoaDon, 3, 4);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -118,10 +120,11 @@
             this.txtHang.Location = new System.Drawing.Point(3, 3);
             this.txtHang.Name = "txtHang";
             this.txtHang.Size = new System.Drawing.Size(631, 26);
-            this.txtHang.TabIndex = 4;
+            this.txtHang.TabIndex = 0;
             this.txtHang.Text = "Nhập chọn hàng";
             this.txtHang.TextChanged += new System.EventHandler(this.txtHang_TextChanged);
             this.txtHang.Enter += new System.EventHandler(this.txtHang_Enter);
+            this.txtHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtHang_KeyDown);
             this.txtHang.Leave += new System.EventHandler(this.txtHang_Leave);
             // 
             // dgvHang
@@ -140,6 +143,7 @@
             this.tableLayoutPanel1.SetColumnSpan(this.dgvHang, 2);
             this.dgvHang.DataSource = this.bsHang;
             this.dgvHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHang.GridColor = System.Drawing.Color.White;
             this.dgvHang.Location = new System.Drawing.Point(0, 28);
             this.dgvHang.Margin = new System.Windows.Forms.Padding(0);
             this.dgvHang.Name = "dgvHang";
@@ -151,17 +155,45 @@
             this.dgvHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_CellDoubleClick);
             this.dgvHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvHang_KeyUp);
             // 
+            // IDHang
+            // 
+            this.IDHang.DataPropertyName = "ID";
+            this.IDHang.HeaderText = "ID";
+            this.IDHang.Name = "IDHang";
+            this.IDHang.ReadOnly = true;
+            this.IDHang.Width = 50;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.HeaderText = "TenHang";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
+            this.TenHang.Width = 555;
+            // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "SoLuong";
+            this.SL.HeaderText = "SoLuong";
+            this.SL.Name = "SL";
+            this.SL.ReadOnly = true;
+            this.SL.Width = 60;
+            // 
+            // bsHang
+            // 
+            this.bsHang.DataSource = typeof(DTO.Hang);
+            // 
             // dgvDanhSachHang
             // 
             this.dgvDanhSachHang.AllowUserToAddRows = false;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDanhSachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDanhSachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDanhSachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDanhSachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -180,6 +212,7 @@
             this.tableLayoutPanel1.SetRowSpan(this.dgvDanhSachHang, 4);
             this.dgvDanhSachHang.Size = new System.Drawing.Size(669, 284);
             this.dgvDanhSachHang.TabIndex = 0;
+            this.dgvDanhSachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHang_CellContentClick);
             // 
             // ID
             // 
@@ -215,20 +248,24 @@
             // 
             // Sua
             // 
+            this.Sua.DataPropertyName = "Sửa";
             this.Sua.HeaderText = "Sửa";
             this.Sua.Name = "Sua";
             this.Sua.ReadOnly = true;
             this.Sua.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.Sua.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.Sua.Text = "Sửa";
+            this.Sua.UseColumnTextForButtonValue = true;
             this.Sua.Width = 55;
             // 
             // Xoa
             // 
+            this.Xoa.DataPropertyName = "Xóa";
             this.Xoa.HeaderText = "Xóa";
             this.Xoa.Name = "Xoa";
             this.Xoa.ReadOnly = true;
             this.Xoa.Text = "Xóa";
+            this.Xoa.UseColumnTextForButtonValue = true;
             this.Xoa.Width = 55;
             // 
             // button7
@@ -239,7 +276,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(38, 28);
             this.button7.TabIndex = 8;
-            this.button7.Text = "X";
+            this.button7.Text = "&X";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -294,7 +331,7 @@
             this.cbxNhanVien.Margin = new System.Windows.Forms.Padding(3, 13, 3, 3);
             this.cbxNhanVien.Name = "cbxNhanVien";
             this.cbxNhanVien.Size = new System.Drawing.Size(332, 28);
-            this.cbxNhanVien.TabIndex = 7;
+            this.cbxNhanVien.TabIndex = 1;
             this.cbxNhanVien.ValueMember = "Ten";
             // 
             // label2
@@ -316,7 +353,7 @@
             this.btnTroLai.Margin = new System.Windows.Forms.Padding(10);
             this.btnTroLai.Name = "btnTroLai";
             this.btnTroLai.Size = new System.Drawing.Size(318, 59);
-            this.btnTroLai.TabIndex = 1;
+            this.btnTroLai.TabIndex = 8;
             this.btnTroLai.Text = "Trở lại";
             this.btnTroLai.UseVisualStyleBackColor = true;
             this.btnTroLai.Click += new System.EventHandler(this.btnTroLai_Click);
@@ -330,7 +367,7 @@
             this.btnHoanThanh.Name = "btnHoanThanh";
             this.tableLayoutPanel1.SetRowSpan(this.btnHoanThanh, 2);
             this.btnHoanThanh.Size = new System.Drawing.Size(318, 72);
-            this.btnHoanThanh.TabIndex = 2;
+            this.btnHoanThanh.TabIndex = 9;
             this.btnHoanThanh.Text = "&Hoàn Thành";
             this.btnHoanThanh.UseVisualStyleBackColor = true;
             this.btnHoanThanh.Click += new System.EventHandler(this.btnHoanThanh_Click);
@@ -343,7 +380,7 @@
             this.btnLuu.Margin = new System.Windows.Forms.Padding(10);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(318, 59);
-            this.btnLuu.TabIndex = 1;
+            this.btnLuu.TabIndex = 7;
             this.btnLuu.Text = "Tạo đơn mới";
             this.btnLuu.UseVisualStyleBackColor = true;
             this.btnLuu.Click += new System.EventHandler(this.btnHuy_Click);
@@ -362,7 +399,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(168, 79);
-            this.tableLayoutPanel4.TabIndex = 13;
+            this.tableLayoutPanel4.TabIndex = 2;
             // 
             // label1
             // 
@@ -381,7 +418,7 @@
             this.txtNhan.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.txtNhan.Name = "txtNhan";
             this.txtNhan.Size = new System.Drawing.Size(162, 26);
-            this.txtNhan.TabIndex = 1;
+            this.txtNhan.TabIndex = 0;
             this.txtNhan.Text = "0";
             this.txtNhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhan_KeyPress);
             this.txtNhan.Leave += new System.EventHandler(this.txtTra_Leave);
@@ -400,7 +437,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(170, 79);
-            this.tableLayoutPanel5.TabIndex = 13;
+            this.tableLayoutPanel5.TabIndex = 3;
             // 
             // label4
             // 
@@ -419,7 +456,7 @@
             this.txtTra.Margin = new System.Windows.Forms.Padding(3, 7, 3, 3);
             this.txtTra.Name = "txtTra";
             this.txtTra.Size = new System.Drawing.Size(164, 26);
-            this.txtTra.TabIndex = 1;
+            this.txtTra.TabIndex = 0;
             this.txtTra.Text = "0";
             this.txtTra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhan_KeyPress);
             this.txtTra.Leave += new System.EventHandler(this.txtTra_Leave);
@@ -427,62 +464,45 @@
             // lblKhachHang
             // 
             this.lblKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblKhachHang.Location = new System.Drawing.Point(678, 236);
+            this.lblKhachHang.Location = new System.Drawing.Point(678, 157);
             this.lblKhachHang.Name = "lblKhachHang";
             this.lblKhachHang.Size = new System.Drawing.Size(162, 79);
             this.lblKhachHang.TabIndex = 11;
             this.lblKhachHang.Text = "Tên Khách Hàng: ";
             this.lblKhachHang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnKhachHang
-            // 
-            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnKhachHang.Location = new System.Drawing.Point(846, 239);
-            this.btnKhachHang.Name = "btnKhachHang";
-            this.btnKhachHang.Size = new System.Drawing.Size(164, 73);
-            this.btnKhachHang.TabIndex = 3;
-            this.btnKhachHang.Text = "&Khách Hàng";
-            this.btnKhachHang.UseVisualStyleBackColor = true;
-            // 
             // chbGiaSi
             // 
-            this.tableLayoutPanel1.SetColumnSpan(this.chbGiaSi, 2);
             this.chbGiaSi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chbGiaSi.Location = new System.Drawing.Point(705, 160);
+            this.chbGiaSi.Location = new System.Drawing.Point(705, 239);
             this.chbGiaSi.Margin = new System.Windows.Forms.Padding(30, 3, 3, 3);
             this.chbGiaSi.Name = "chbGiaSi";
-            this.chbGiaSi.Size = new System.Drawing.Size(305, 73);
-            this.chbGiaSi.TabIndex = 0;
+            this.chbGiaSi.Size = new System.Drawing.Size(135, 73);
+            this.chbGiaSi.TabIndex = 5;
             this.chbGiaSi.Text = "Bán Giá &Sỉ";
             this.chbGiaSi.UseVisualStyleBackColor = true;
             // 
-            // IDHang
+            // btnKhachHang
             // 
-            this.IDHang.DataPropertyName = "ID";
-            this.IDHang.HeaderText = "ID";
-            this.IDHang.Name = "IDHang";
-            this.IDHang.ReadOnly = true;
-            this.IDHang.Width = 50;
+            this.btnKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnKhachHang.Location = new System.Drawing.Point(846, 160);
+            this.btnKhachHang.Name = "btnKhachHang";
+            this.btnKhachHang.Size = new System.Drawing.Size(164, 73);
+            this.btnKhachHang.TabIndex = 4;
+            this.btnKhachHang.Text = "&Khách Hàng";
+            this.btnKhachHang.UseVisualStyleBackColor = true;
+            this.btnKhachHang.Click += new System.EventHandler(this.btnKhachHang_Click);
             // 
-            // TenHang
+            // btnXoaDon
             // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.HeaderText = "TenHang";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.ReadOnly = true;
-            this.TenHang.Width = 555;
-            // 
-            // SL
-            // 
-            this.SL.DataPropertyName = "SoLuong";
-            this.SL.HeaderText = "SoLuong";
-            this.SL.Name = "SL";
-            this.SL.ReadOnly = true;
-            this.SL.Width = 60;
-            // 
-            // bsHang
-            // 
-            this.bsHang.DataSource = typeof(DTO.Hang);
+            this.btnXoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXoaDon.Location = new System.Drawing.Point(846, 239);
+            this.btnXoaDon.Name = "btnXoaDon";
+            this.btnXoaDon.Size = new System.Drawing.Size(164, 73);
+            this.btnXoaDon.TabIndex = 6;
+            this.btnXoaDon.Text = "Làm mới đơn";
+            this.btnXoaDon.UseVisualStyleBackColor = true;
+            this.btnXoaDon.Click += new System.EventHandler(this.btnXoaDon_Click);
             // 
             // frmTaoDonHange
             // 
@@ -495,10 +515,12 @@
             this.Name = "frmTaoDonHange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo Đơn Hàng";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmTaoDonHange_FormClosing);
             this.Load += new System.EventHandler(this.frmTaoDonHang_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHang)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -506,7 +528,6 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -529,12 +550,6 @@
         private System.Windows.Forms.Label lblKhachHang;
         private System.Windows.Forms.Label lblThanhTien;
         private System.Windows.Forms.BindingSource bsHang;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private System.Windows.Forms.DataGridViewButtonColumn Sua;
-        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtNhan;
@@ -544,5 +559,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn IDHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn SL;
+        private System.Windows.Forms.Button btnXoaDon;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Ten;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SoLuong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
+        private System.Windows.Forms.DataGridViewButtonColumn Sua;
+        private System.Windows.Forms.DataGridViewButtonColumn Xoa;
     }
 }

@@ -13,6 +13,11 @@ namespace GUI
         public static TaiKhoan TK;
         public static List<Hang> lstHang = new List<Hang>();
         public static List<HoaDon> lstHoaDon = new List<HoaDon>();
+        public static List<KhachHang> lstKhachHang = new List<KhachHang>();
+        public static List<NhanVien> lstNhanVien = new List<NhanVien>();
+
+        public static DataTable dtKhachHang = new DataTable();
+
         public static string FormatNumber(string s) => Convert.ToInt64(s).ToString("N0");
         public static int UnFormatNumber(string s) => Convert.ToInt32(s.Replace(",", "").Replace(".", ""));
         /// <summary>

@@ -33,9 +33,9 @@
             this.btnTroLai = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.numSL = new System.Windows.Forms.NumericUpDown();
-            this.txtGiaSi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chBTang = new System.Windows.Forms.CheckBox();
+            this.txtGiaSi = new System.Windows.Forms.TextBox();
             this.tlpWrapper.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numSL)).BeginInit();
             this.SuspendLayout();
@@ -126,17 +126,6 @@
             0});
             this.numSL.ValueChanged += new System.EventHandler(this.numSL_ValueChanged);
             // 
-            // txtGiaSi
-            // 
-            this.tlpWrapper.SetColumnSpan(this.txtGiaSi, 3);
-            this.txtGiaSi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGiaSi.Location = new System.Drawing.Point(194, 53);
-            this.txtGiaSi.Name = "txtGiaSi";
-            this.txtGiaSi.Size = new System.Drawing.Size(185, 35);
-            this.txtGiaSi.TabIndex = 5;
-            this.txtGiaSi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaSi_KeyPress);
-            this.txtGiaSi.Leave += new System.EventHandler(this.txtGiaSi_Leave);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -161,6 +150,17 @@
             this.chBTang.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.chBTang.UseVisualStyleBackColor = true;
             this.chBTang.CheckedChanged += new System.EventHandler(this.chBTang_CheckedChanged);
+            // 
+            // txtGiaSi
+            // 
+            this.tlpWrapper.SetColumnSpan(this.txtGiaSi, 3);
+            this.txtGiaSi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtGiaSi.Location = new System.Drawing.Point(194, 53);
+            this.txtGiaSi.Name = "txtGiaSi";
+            this.txtGiaSi.Size = new System.Drawing.Size(185, 35);
+            this.txtGiaSi.TabIndex = 5;
+            this.txtGiaSi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaSi_KeyPress);
+            this.txtGiaSi.Leave += new System.EventHandler(this.txtGiaSi_Leave);
             // 
             // frmYeuCauHang
             // 

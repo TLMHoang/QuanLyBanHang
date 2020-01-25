@@ -38,6 +38,17 @@ namespace BAL
             return lst;
         }
 
+        public Task<List<KhachHang>> LayLst(DataTable dt)
+        {
+            List<KhachHang> lst = new List<KhachHang>();
+            foreach (DataRow dr in dt.Rows)
+            {
+                lst.Add(new KhachHang(dr));
+            }
+
+            return Task.FromResult(lst);
+        }
+
         public async Task<int> Them(KhachHang obj)
         {
             return await Val.Them(obj);

@@ -51,14 +51,24 @@ namespace BAL
             return await Val.Them(obj);
         }
 
-        public async Task<int> Xoa(int IDHoaDon)
+        //public async Task<int> Xoa(int IDHoaDon)
+        //{
+        //    return await Val.Xoa(IDHoaDon);
+        //}
+
+        public async Task<int> Xoa(int IDHoaDon, int IDHang, byte Tang)
         {
-            return await Val.Xoa(IDHoaDon);
+            return await Val.Xoa(IDHoaDon, IDHang, Tang);
         }
 
-        public async Task<int> Xoa(int IDHoaDon, int IDHang)
+        public async Task<int> Xoa(CTHD obj)
         {
-            return await Val.Xoa(IDHoaDon, IDHang);
+            return await Val.Xoa(obj);
+        }
+
+        public Task<int> Xoa(int ID)
+        {
+            throw new System.NotImplementedException();
         }
     }
 }

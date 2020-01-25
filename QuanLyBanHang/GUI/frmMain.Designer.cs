@@ -34,19 +34,22 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátỨngDụngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnXemDoanhThu = new System.Windows.Forms.Button();
-            this.BtnNhapHang = new System.Windows.Forms.Button();
-            this.btnHanghoan = new System.Windows.Forms.Button();
-            this.btnBan = new System.Windows.Forms.Button();
-            this.btnQuanLy = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bsHang = new System.Windows.Forms.BindingSource(this.components);
+            this.btnQuanLy = new System.Windows.Forms.Button();
+            this.btnNhapHang = new System.Windows.Forms.Button();
+            this.btnXemDoanhThu = new System.Windows.Forms.Button();
+            this.btnBan = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnHoaDon = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +61,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(11, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(812, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(698, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -93,73 +96,39 @@
             this.thoátỨngDụngToolStripMenuItem.Text = "Thoát ứng dụng";
             this.thoátỨngDụngToolStripMenuItem.Click += new System.EventHandler(this.thoátỨngDụngToolStripMenuItem_Click);
             // 
-            // btnXemDoanhThu
-            // 
-            this.btnXemDoanhThu.Location = new System.Drawing.Point(15, 10);
-            this.btnXemDoanhThu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnXemDoanhThu.Name = "btnXemDoanhThu";
-            this.btnXemDoanhThu.Size = new System.Drawing.Size(172, 36);
-            this.btnXemDoanhThu.TabIndex = 0;
-            this.btnXemDoanhThu.Text = "Xem doanh thu";
-            this.btnXemDoanhThu.UseVisualStyleBackColor = true;
-            // 
-            // BtnNhapHang
-            // 
-            this.BtnNhapHang.Location = new System.Drawing.Point(15, 76);
-            this.BtnNhapHang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnNhapHang.Name = "BtnNhapHang";
-            this.BtnNhapHang.Size = new System.Drawing.Size(172, 42);
-            this.BtnNhapHang.TabIndex = 0;
-            this.BtnNhapHang.Text = "Nhập Hàng";
-            this.BtnNhapHang.UseVisualStyleBackColor = true;
-            this.BtnNhapHang.Click += new System.EventHandler(this.BtnNhapHang_Click);
-            // 
-            // btnHanghoan
-            // 
-            this.btnHanghoan.Location = new System.Drawing.Point(216, 10);
-            this.btnHanghoan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnHanghoan.Name = "btnHanghoan";
-            this.btnHanghoan.Size = new System.Drawing.Size(155, 36);
-            this.btnHanghoan.TabIndex = 0;
-            this.btnHanghoan.Text = "Hàng hoàn";
-            this.btnHanghoan.UseVisualStyleBackColor = true;
-            // 
-            // btnBan
-            // 
-            this.btnBan.Location = new System.Drawing.Point(404, 10);
-            this.btnBan.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnBan.Name = "btnBan";
-            this.btnBan.Size = new System.Drawing.Size(155, 54);
-            this.btnBan.TabIndex = 0;
-            this.btnBan.Text = "Bán";
-            this.btnBan.UseVisualStyleBackColor = true;
-            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
-            // 
-            // btnQuanLy
-            // 
-            this.btnQuanLy.Location = new System.Drawing.Point(216, 70);
-            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnQuanLy.Name = "btnQuanLy";
-            this.btnQuanLy.Size = new System.Drawing.Size(155, 48);
-            this.btnQuanLy.TabIndex = 1;
-            this.btnQuanLy.Text = "&Quản lý";
-            this.btnQuanLy.UseVisualStyleBackColor = true;
-            this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnXemDoanhThu);
-            this.panel1.Controls.Add(this.btnQuanLy);
-            this.panel1.Controls.Add(this.btnHanghoan);
-            this.panel1.Controls.Add(this.btnBan);
-            this.panel1.Controls.Add(this.BtnNhapHang);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.panel1.Location = new System.Drawing.Point(0, 448);
+            this.panel1.Location = new System.Drawing.Point(0, 527);
             this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(812, 178);
+            this.panel1.Size = new System.Drawing.Size(698, 99);
             this.panel1.TabIndex = 2;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Controls.Add(this.btnQuanLy, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnXemDoanhThu, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnNhapHang, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnBan, 2, 1);
+            this.tableLayoutPanel1.Controls.Add(this.button1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.btnHoaDon, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(698, 99);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
             // dataGridView1
             // 
@@ -175,7 +144,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 424);
+            this.dataGridView1.Size = new System.Drawing.Size(698, 503);
             this.dataGridView1.TabIndex = 3;
             // 
             // iDDataGridViewTextBoxColumn
@@ -205,11 +174,88 @@
             // 
             this.bsHang.DataSource = typeof(DTO.Hang);
             // 
+            // btnQuanLy
+            // 
+            this.btnQuanLy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnQuanLy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnQuanLy.Location = new System.Drawing.Point(10, 5);
+            this.btnQuanLy.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnQuanLy.Name = "btnQuanLy";
+            this.btnQuanLy.Size = new System.Drawing.Size(212, 39);
+            this.btnQuanLy.TabIndex = 1;
+            this.btnQuanLy.Text = "&Quản lý";
+            this.btnQuanLy.UseVisualStyleBackColor = true;
+            this.btnQuanLy.Click += new System.EventHandler(this.btnQuanLy_Click);
+            // 
+            // btnNhapHang
+            // 
+            this.btnNhapHang.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnNhapHang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnNhapHang.Location = new System.Drawing.Point(242, 5);
+            this.btnNhapHang.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnNhapHang.Name = "btnNhapHang";
+            this.btnNhapHang.Size = new System.Drawing.Size(212, 39);
+            this.btnNhapHang.TabIndex = 0;
+            this.btnNhapHang.Text = "Nhập Hàng";
+            this.btnNhapHang.UseVisualStyleBackColor = true;
+            this.btnNhapHang.Click += new System.EventHandler(this.BtnNhapHang_Click);
+            // 
+            // btnXemDoanhThu
+            // 
+            this.btnXemDoanhThu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnXemDoanhThu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnXemDoanhThu.Location = new System.Drawing.Point(474, 5);
+            this.btnXemDoanhThu.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnXemDoanhThu.Name = "btnXemDoanhThu";
+            this.btnXemDoanhThu.Size = new System.Drawing.Size(214, 39);
+            this.btnXemDoanhThu.TabIndex = 0;
+            this.btnXemDoanhThu.Text = "Xem doanh thu";
+            this.btnXemDoanhThu.UseVisualStyleBackColor = true;
+            this.btnXemDoanhThu.Click += new System.EventHandler(this.btnXemDoanhThu_Click);
+            // 
+            // btnBan
+            // 
+            this.btnBan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnBan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnBan.Location = new System.Drawing.Point(474, 54);
+            this.btnBan.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnBan.Name = "btnBan";
+            this.btnBan.Size = new System.Drawing.Size(214, 40);
+            this.btnBan.TabIndex = 0;
+            this.btnBan.Text = "Bán";
+            this.btnBan.UseVisualStyleBackColor = true;
+            this.btnBan.Click += new System.EventHandler(this.btnBan_Click);
+            // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(10, 54);
+            this.button1.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(212, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Ẩn/Hiện thanh tìm kiếm";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnHoaDon
+            // 
+            this.btnHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHoaDon.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnHoaDon.Location = new System.Drawing.Point(242, 54);
+            this.btnHoaDon.Margin = new System.Windows.Forms.Padding(10, 5, 10, 5);
+            this.btnHoaDon.Name = "btnHoaDon";
+            this.btnHoaDon.Size = new System.Drawing.Size(212, 40);
+            this.btnHoaDon.TabIndex = 0;
+            this.btnHoaDon.Text = "Hóa Đơn";
+            this.btnHoaDon.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 626);
+            this.ClientSize = new System.Drawing.Size(698, 626);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
@@ -223,6 +269,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             this.ResumeLayout(false);
@@ -237,16 +284,18 @@
         private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátỨngDụngToolStripMenuItem;
-        private System.Windows.Forms.Button btnXemDoanhThu;
-        private System.Windows.Forms.Button BtnNhapHang;
-        private System.Windows.Forms.Button btnHanghoan;
-        private System.Windows.Forms.Button btnBan;
-        private System.Windows.Forms.Button btnQuanLy;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bsHang;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenHangDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn soLuongDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Button btnQuanLy;
+        private System.Windows.Forms.Button btnXemDoanhThu;
+        private System.Windows.Forms.Button btnNhapHang;
+        private System.Windows.Forms.Button btnBan;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnHoaDon;
     }
 }

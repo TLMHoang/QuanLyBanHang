@@ -23,14 +23,28 @@ namespace DAL
                 );
         }
 
-        public async Task<DataTable> Lay()
+        public async Task<DataTable> Lay(int ID)
         {
-            return await ExecuteQuery("LayHoaDon");
+            return await ExecuteQuery("LayHoaDon", new SqlParameter("@ID", SqlDbType.Int) { Value = ID });
         }
 
         public async Task<DataTable> Lay(byte TT)
         {
             return await ExecuteQuery("LayHoaDonNoF", new SqlParameter("@TinhTrang", SqlDbType.Bit) { Value = TT });
+        }
+
+        public async Task<DataTable> Lay(DateTime dateFrom, DateTime dateTo)
+        {
+            return await ExecuteQuery(
+                "LayHoaDonNgay",
+                new SqlParameter("@From", SqlDbType.DateTime) { Value = dateFrom },
+                new SqlParameter("@To", SqlDbType.DateTime) { Value = dateTo}
+                );
+        }
+
+        public Task<DataTable> Lay()
+        {
+            throw new NotImplementedException();
         }
 
         public async Task<int> Them(HoaDon obj)

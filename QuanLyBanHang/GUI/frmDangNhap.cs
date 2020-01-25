@@ -62,7 +62,7 @@ namespace GUI
         private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = !(MessageBox.Show("Bạn có muốn thoát", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes);
-            this.FormClosing -= frmDangNhap_FormClosing;
+            //this.FormClosing -= frmDangNhap_FormClosing;
         }
     }
 }

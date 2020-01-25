@@ -50,19 +50,31 @@ namespace DAL
                 );
         }
 
-        public async Task<int> Xoa(int IDHoaDon)
+        public Task<int> Xoa(int IDHoaDon)
+        {
+            throw new NotImplementedException();
+            //    return await ExecuteNonQuery(
+            //        "XoaCTHD",
+            //        new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = IDHoaDon }
+            //        );
+        }
+        public async Task<int> Xoa(int IDHoaDon, int IDHang, byte Tang)
         {
             return await ExecuteNonQuery(
                 "XoaCTHD",
-                new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = IDHoaDon }
+                new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = IDHoaDon },
+                new SqlParameter("@IDHang", SqlDbType.Int) { Value = IDHang},
+                new SqlParameter("@Tang", SqlDbType.Bit) { Value = Tang}
                 );
         }
-        public async Task<int> Xoa(int IDHoaDon, int IDHang)
+
+        public async Task<int> Xoa(CTHD obj)
         {
             return await ExecuteNonQuery(
-                "XoaCTHDID",
-                new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = IDHoaDon },
-                new SqlParameter("@IDHang", SqlDbType.Int) { Value = IDHang}
+                "XoaCTHD",
+                new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = obj.IDHoaDon },
+                new SqlParameter("@IDHang", SqlDbType.Int) { Value = obj.IDHang },
+                new SqlParameter("@Tang", SqlDbType.Bit) { Value = obj.Tang }
                 );
         }
 

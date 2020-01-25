@@ -15,13 +15,14 @@ namespace GUI
     public partial class frmYeuCauHang : Form
     {
         private CTHD c = new CTHD();
+        private Hang h = new Hang();
         private bool GS;
         public frmYeuCauHang()
         {
             InitializeComponent();
         }
 
-        public frmYeuCauHang(CTHD ct, bool gs, int Gia, int SL)
+        public frmYeuCauHang(CTHD ct, bool gs, int iDHang)
         {
             InitializeComponent();
 
@@ -31,7 +32,8 @@ namespace GUI
             c.Tang = ct.Tang;
             c.GiaSi = ct.GiaSi;
             this.GS = gs;
-            numSL.Maximum = SL;
+            h = Program.lstHang.FirstOrDefault(p => p.ID == iDHang);
+            numSL.Maximum = h.SoLuong;
 
             txtGiaSi.ReadOnly = !gs;
             if (gs)
@@ -40,7 +42,7 @@ namespace GUI
             }
             else
             {
-                txtGiaSi.Tag = txtGiaSi.Text = Program.FormatNumber(Gia.ToString());
+                txtGiaSi.Tag = txtGiaSi.Text = Program.FormatNumber(h.GiaBan.ToString());
             }
             
         }
@@ -52,12 +54,27 @@ namespace GUI
             {
                 return false;
             }
+            else if (((new CTHD(dt.Rows[0]).Tang) == 1 && txtGiaSi.Text != "0") || ((new CTHD(dt.Rows[0]).Tang) == 0 && txtGiaSi.Text == "0"))
+            {
+                return false;
+            }
             return true;
         }
 
         private async void btnXacNhan_Click(object sender, EventArgs e)
         {
             c.SoLuong = Convert.ToInt32(numSL.Value);
+            if (chBTang.Checked)
+            {
+                c.Tang = 1;
+            }
+            else
+            {
+                if (Program.UnFormatNumber(txtGiaSi.Text) != h.GiaBan)
+                {
+                    c.GiaSi = int.Parse(txtGiaSi.Text);
+                }
+            }
             if (await Check())
             {
                 await new CTHDBAL().CapNhap(c);
@@ -96,6 +113,10 @@ namespace GUI
             if (numSL.Value == numSL.Maximum)
             {
                 MessageBox.Show(this.Text + "\nCòn : " + numSL.Maximum + "\nKhông bán quá số lượng tồn.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            if (!GS && !chBTang.Checked)
+            {
+                txtGiaSi.Text = Program.FormatNumber((h.GiaBan * Convert.ToInt32(numSL.Value)).ToString());
             }
         }
 

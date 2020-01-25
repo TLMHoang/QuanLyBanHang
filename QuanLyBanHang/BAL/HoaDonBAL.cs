@@ -19,7 +19,17 @@ namespace BAL
 
         public async Task<DataTable> LayDT()
         {
-            return await Val.Lay();
+            return await Val.Lay(-1);
+        }
+
+        public async Task<DataTable> LayDT(int ID)
+        {
+            return await Val.Lay(ID);
+        }
+
+        public async Task<DataTable> LayDT(DateTime dateFrom, DateTime dateTo)
+        {
+            return await Val.Lay(dateFrom,dateTo);
         }
 
         public async Task<DataTable> LayTT()
