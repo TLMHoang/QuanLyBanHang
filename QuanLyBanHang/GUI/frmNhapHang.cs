@@ -71,7 +71,7 @@ namespace GUI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                txtFind.Text = dgvDanhSach.Rows[dgvDanhSach.CurrentCell.RowIndex - 1].Cells[1].Value.ToString();
+                txtFind.Text = dgvDanhSach.Rows[dgvDanhSach.CurrentCell.RowIndex].Cells[1].Value.ToString();
                 hang = Program.lstHang.FirstOrDefault(p => p.ID == Convert.ToInt32(dgvDanhSach.Rows[0].Cells["ID"].Value));
                 numSoLuong.Focus();
                 btnCapNhap.Enabled = true;
