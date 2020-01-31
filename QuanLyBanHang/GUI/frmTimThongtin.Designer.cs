@@ -29,12 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTimThongtin));
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.dgvHang = new System.Windows.Forms.DataGridView();
-            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soLuongDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             this.SuspendLayout();
@@ -76,10 +77,6 @@
             this.dgvHang.Size = new System.Drawing.Size(344, 195);
             this.dgvHang.TabIndex = 1;
             // 
-            // bsHang
-            // 
-            this.bsHang.DataSource = typeof(DTO.Hang);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
@@ -104,6 +101,10 @@
             this.soLuongDataGridViewTextBoxColumn.ReadOnly = true;
             this.soLuongDataGridViewTextBoxColumn.Width = 50;
             // 
+            // bsHang
+            // 
+            this.bsHang.DataSource = typeof(DTO.Hang);
+            // 
             // frmTimThongtin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -112,6 +113,7 @@
             this.Controls.Add(this.dgvHang);
             this.Controls.Add(this.txtTimKiem);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.MinimizeBox = false;

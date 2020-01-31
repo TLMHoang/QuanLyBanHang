@@ -24,6 +24,11 @@ namespace BAL
             return await Val.Lay(IDHoaDon, IDHang);
         }
 
+        public async Task<DataTable> LayID(int IDHoaDon, int IDHang, byte Tang)
+        {
+            return await Val.Lay(IDHoaDon, IDHang, Tang);
+        }
+
         public async Task<List<CTHD>> LayLst()
         {
             List<CTHD> lst = new List<CTHD>();

@@ -32,10 +32,9 @@ namespace BAL
             return await Val.Lay(dateFrom,dateTo);
         }
 
-        public async Task<DataTable> LayTT()
+        public async Task<DataTable> LayDT(DateTime dateFrom, DateTime dateTo, byte TT)
         {
-            byte TT = 0;
-            return await Val.Lay(TT);
+            return await Val.Lay(dateFrom, dateTo, TT);
         }
 
         public async Task<List<HoaDon>> LayLst()

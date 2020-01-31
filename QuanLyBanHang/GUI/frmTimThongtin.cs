@@ -14,7 +14,7 @@ namespace GUI
     public partial class frmTimThongtin : Form
     {
 
-        private Size sizeH = new Size(360, 65);
+        private Size sizeH = new Size(30, 65);
         private Size sizeS = new Size(360, 260);
         public frmTimThongtin()
         {
@@ -83,12 +83,14 @@ namespace GUI
 
         private void frmTimThongtin_Leave(object sender, EventArgs e)
         {
-            this.Opacity = 0.05;
+            this.Text = "";
+            this.Opacity = 0.2;
             this.Size = sizeH;
         }
 
         private void frmTimThongtin_Enter(object sender, EventArgs e)
         {
+            this.Text = "Tra Thông Tin";
             this.Opacity = 1;
             this.Size = sizeS;
         }

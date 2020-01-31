@@ -38,6 +38,16 @@ namespace DAL
                 );
         }
 
+        public async Task<DataTable> Lay(int IDHoaDon, int IDHang, byte Tang)
+        {
+            return await ExecuteQuery(
+                "LayCTHDCheck",
+                new SqlParameter("@IDHoaDon", SqlDbType.Int) { Value = IDHoaDon },
+                new SqlParameter("@IDHang", SqlDbType.Int) { Value = IDHang },
+                new SqlParameter("@Tang", SqlDbType.Bit) { Value = Tang}
+                );
+        }
+
         public async Task<int> Them(CTHD obj)
         {
             return await ExecuteNonQuery(

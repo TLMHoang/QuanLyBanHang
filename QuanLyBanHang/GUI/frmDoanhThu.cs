@@ -120,6 +120,12 @@ namespace GUI
 
         private async void btnViewReport_Click(object sender, EventArgs e)
         {
+            int ValTong = 0;
+            int ValChi = 0;
+
+            lstDoanhThu.Clear();
+            lvDanhSach.Items.Clear();
+
             if (radNam.Checked)
             {
                 TuNgay = new DateTime(Convert.ToInt32(cbxNam.Text), 1, 1, 0, 0, 0);
@@ -132,15 +138,17 @@ namespace GUI
             }
             if (radTuan.Checked)
             {
-                DateTime d = dtpNgayBD.Value;
+                DateTime d = DateTime.Now;
+                d = new DateTime(dtpNgayBD.Value.Year, dtpNgayBD.Value.Month, dtpNgayBD.Value.Day, 0, 0, 0);
 
-                TuNgay = d.AddDays(-(Convert.ToInt32(d.DayOfWeek) - 1));
-                DenNgay = TuNgay.AddDays(6);
+                TuNgay = d.AddDays(-(Convert.ToInt32(d.DayOfWeek) == 0 ? 6 : Convert.ToInt32(d.DayOfWeek) - 1));
+                d = TuNgay.AddDays(6);
+                DenNgay = new DateTime(d.Year, d.Month, d.Day, 23, 59, 59);//TuNgay.AddDays(6);
             }
             if (radThoiGian.Checked)
             {
-                TuNgay = dtpNgayBD.Value;
-                DenNgay = dtpNgayKetThuc.Value;
+                TuNgay = new DateTime(dtpNgayBD.Value.Year, dtpNgayBD.Value.Month, dtpNgayBD.Value.Day, 0, 0, 0);
+                DenNgay = new DateTime(dtpNgayKetThuc.Value.Year, dtpNgayKetThuc.Value.Month, dtpNgayKetThuc.Value.Day, 23, 59, 59);
             }
             try
             {
@@ -166,9 +174,14 @@ namespace GUI
                     foreach (var item in gr)
                     {
                         lvg.Items.Add(new ListViewItem(new string[] { item.ID.ToString(), item.NVien, item.KHang, Program.FormatNumber(item.TongChi.ToString()), Program.FormatNumber(item.Tong.ToString()) }));
+                        ValTong += item.Tong;
+                        ValChi += item.TongChi;
                     }
                     lvDanhSach.Items.AddRange(lvg.Items);
                     lvDanhSach.Groups.Add(lvg);
+
+                    lblTong.Text = Program.FormatNumber(ValTong.ToString());
+                    lblLoiNhuan.Text = Program.FormatNumber(ValChi.ToString());
                 }
             }
             catch (Exception ex)
@@ -176,9 +189,6 @@ namespace GUI
 
                 MessageBox.Show(ex.ToString());
             }
-            
-
-            
 
         }
 

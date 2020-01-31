@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GUI
 {
-    public partial class frmHoaDonChuaChot : Form
+    public partial class frmHoaDon : Form
     {
-        public frmHoaDonChuaChot()
+        public frmHoaDon()
         {
             InitializeComponent();
+        }
+
+        private void frmHoaDon_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -22,6 +22,8 @@ namespace GUI
             public string ThanhTien { get; set; }
         }
 
+        private List<CTHang> lstCT = new List<CTHang>();
+
         private HoaDon hd = new HoaDon();
         private Ship s = new Ship();
         private KhachHang kh = new KhachHang();
@@ -158,15 +160,16 @@ namespace GUI
 
         private async Task CapNhap()
         {
-            List<CTHang> lst = await CTHangs();
+            lstCT.Clear();
+            lstCT = await CTHangs();
             lblThanhTien.Text = "0";
 
-            bs.DataSource = lst;
-            foreach (CTHang item in lst)
+            bs.DataSource = lstCT;
+            foreach (CTHang item in lstCT)
             {
                 lblThanhTien.Text = (Convert.ToInt32(lblThanhTien.Text) + Program.UnFormatNumber(item.ThanhTien)).ToString();
             }
-            lblThanhTien.Text = Program.FormatNumber(lblThanhTien.Text);
+            lblThanhTien.Text = Program.FormatNumber((int.Parse(lblThanhTien.Text) + Program.UnFormatNumber(txtNhan.Text)).ToString());
             bsHang.DataSource = await new HangBAL().LayDT();
         }
 
@@ -261,6 +264,7 @@ namespace GUI
             s.Nhan = Program.UnFormatNumber(txtNhan.Text);
             s.Tra = Program.UnFormatNumber(txtTra.Text);
             await balShip.CapNhap(s);
+            lblThanhTien.Text = Program.FormatNumber((Program.UnFormatNumber(lblThanhTien.Text) + Program.UnFormatNumber(txtNhan.Text)).ToString());
         }
 
         private void txtNhan_KeyPress(object sender, KeyPressEventArgs e)
@@ -272,6 +276,12 @@ namespace GUI
                     e.Handled = true;
                 }
             }
+        }
+
+        private void txtNhan_Enter(object sender, EventArgs e)
+        {
+            lblThanhTien.Text = Program.FormatNumber((Program.UnFormatNumber(lblThanhTien.Text) - Program.UnFormatNumber(txtNhan.Text)).ToString());
+            txtNhan.Text = "";
         }
 
         #endregion
@@ -342,7 +352,9 @@ namespace GUI
                     // click sửa here
                     frmYeuCauHang f = new frmYeuCauHang(new CTHD((await balCTHD.LayID(hd.ID, Convert.ToInt32(dt.Rows[e.RowIndex].Cells["ID"].Value))).Rows[0]),
                         chbGiaSi.Checked,
-                        Convert.ToInt32(dt.Rows[e.RowIndex].Cells["ID"].Value));
+                        Convert.ToInt32(dt.Rows[e.RowIndex].Cells["ID"].Value),
+                        (dgvDanhSachHang.Rows[dgvDanhSachHang.CurrentCell.RowIndex].Cells["ThanhTien"].Value.ToString() == "") ? false : true
+                        );
 
                     f.Text = dt.Rows[e.RowIndex].Cells["Ten"].Value.ToString();
                     if (f.ShowDialog() == DialogResult.OK)
@@ -382,5 +394,7 @@ namespace GUI
                 await balHD.Xoa(hd.ID);
             }
         }
+
+        
     }
 }

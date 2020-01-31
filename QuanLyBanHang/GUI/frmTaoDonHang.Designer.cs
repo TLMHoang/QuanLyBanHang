@@ -30,13 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTaoDonHange));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.txtHang = new System.Windows.Forms.TextBox();
             this.dgvHang = new System.Windows.Forms.DataGridView();
-            this.IDHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.dgvDanhSachHang = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,13 +60,17 @@
             this.chbGiaSi = new System.Windows.Forms.CheckBox();
             this.btnKhachHang = new System.Windows.Forms.Button();
             this.btnXoaDon = new System.Windows.Forms.Button();
+            this.IDHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TenHang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SL = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHang = new System.Windows.Forms.BindingSource(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHang)).BeginInit();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -154,34 +155,6 @@
             this.dgvHang.TabIndex = 0;
             this.dgvHang.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHang_CellDoubleClick);
             this.dgvHang.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dgvHang_KeyUp);
-            // 
-            // IDHang
-            // 
-            this.IDHang.DataPropertyName = "ID";
-            this.IDHang.HeaderText = "ID";
-            this.IDHang.Name = "IDHang";
-            this.IDHang.ReadOnly = true;
-            this.IDHang.Width = 50;
-            // 
-            // TenHang
-            // 
-            this.TenHang.DataPropertyName = "TenHang";
-            this.TenHang.HeaderText = "TenHang";
-            this.TenHang.Name = "TenHang";
-            this.TenHang.ReadOnly = true;
-            this.TenHang.Width = 555;
-            // 
-            // SL
-            // 
-            this.SL.DataPropertyName = "SoLuong";
-            this.SL.HeaderText = "SoLuong";
-            this.SL.Name = "SL";
-            this.SL.ReadOnly = true;
-            this.SL.Width = 60;
-            // 
-            // bsHang
-            // 
-            this.bsHang.DataSource = typeof(DTO.Hang);
             // 
             // dgvDanhSachHang
             // 
@@ -420,6 +393,7 @@
             this.txtNhan.Size = new System.Drawing.Size(162, 26);
             this.txtNhan.TabIndex = 0;
             this.txtNhan.Text = "0";
+            this.txtNhan.Enter += new System.EventHandler(this.txtNhan_Enter);
             this.txtNhan.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNhan_KeyPress);
             this.txtNhan.Leave += new System.EventHandler(this.txtTra_Leave);
             // 
@@ -504,6 +478,34 @@
             this.btnXoaDon.UseVisualStyleBackColor = true;
             this.btnXoaDon.Click += new System.EventHandler(this.btnXoaDon_Click);
             // 
+            // IDHang
+            // 
+            this.IDHang.DataPropertyName = "ID";
+            this.IDHang.HeaderText = "ID";
+            this.IDHang.Name = "IDHang";
+            this.IDHang.ReadOnly = true;
+            this.IDHang.Width = 50;
+            // 
+            // TenHang
+            // 
+            this.TenHang.DataPropertyName = "TenHang";
+            this.TenHang.HeaderText = "TenHang";
+            this.TenHang.Name = "TenHang";
+            this.TenHang.ReadOnly = true;
+            this.TenHang.Width = 555;
+            // 
+            // SL
+            // 
+            this.SL.DataPropertyName = "SoLuong";
+            this.SL.HeaderText = "SoLuong";
+            this.SL.Name = "SL";
+            this.SL.ReadOnly = true;
+            this.SL.Width = 60;
+            // 
+            // bsHang
+            // 
+            this.bsHang.DataSource = typeof(DTO.Hang);
+            // 
             // frmTaoDonHange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -511,6 +513,7 @@
             this.ClientSize = new System.Drawing.Size(1013, 565);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmTaoDonHange";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -520,7 +523,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHang)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHang)).EndInit();
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
@@ -528,6 +530,7 @@
             this.tableLayoutPanel4.PerformLayout();
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.bsHang)).EndInit();
             this.ResumeLayout(false);
 
         }

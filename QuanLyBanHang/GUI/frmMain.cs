@@ -122,12 +122,28 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
             ftk.Visible = !ftk.Visible;
+            MessageBox.Show((ftk.Visible) ? "Mở công cụ tìm kiếm!" : "Tắt công cụ tìm kiếm!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnXemDoanhThu_Click(object sender, EventArgs e)
         {
             frmDoanhThu f = new frmDoanhThu();
             f.ShowDialog();
+        }
+
+        private async void btnHoaDon_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Chức năng đang trong giai doạn thử nghiệm và hoàn tất.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            frmChon f = new frmChon();
+
+            ftk.Close();
+            ftk = new frmTimThongtin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+            ftk.Show();
+
+            await LoadDataALL();
         }
     }
 }

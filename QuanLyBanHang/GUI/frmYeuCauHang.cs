@@ -47,43 +47,75 @@ namespace GUI
             
         }
 
+        public frmYeuCauHang(CTHD ct, bool gs, int iDHang, bool Tang)
+        {
+            InitializeComponent();
+
+            c.IDHang = ct.IDHang;
+            c.IDHoaDon = ct.IDHoaDon;
+            c.SoLuong = ct.SoLuong;
+            c.Tang = ct.Tang;
+            c.GiaSi = ct.GiaSi;
+            this.GS = gs;
+            h = Program.lstHang.FirstOrDefault(p => p.ID == iDHang);
+            numSL.Maximum = h.SoLuong;
+
+            txtGiaSi.ReadOnly = !gs;
+            if (gs)
+            {
+                txtGiaSi.Text = "";
+            }
+            else
+            {
+                txtGiaSi.Tag = txtGiaSi.Text = Program.FormatNumber(h.GiaBan.ToString());
+            }
+            chBTang.Checked = Tang;
+        }
+
         private async Task<bool> Check()
         {
-            DataTable dt = (await new CTHDBAL().LayID(c.IDHoaDon, c.IDHang));
+            DataTable dt = (await new CTHDBAL().LayID(c.IDHoaDon, c.IDHang, Convert.ToByte(c.Tang)));
             if (dt.Rows.Count == 0)
             {
                 return false;
             }
-            else if (((new CTHD(dt.Rows[0]).Tang) == 1 && txtGiaSi.Text != "0") || ((new CTHD(dt.Rows[0]).Tang) == 0 && txtGiaSi.Text == "0"))
-            {
-                return false;
-            }
+            else if ((new CTHD(dt.Rows[0]).Tang == 1 && txtGiaSi.Text != "0") || ((new CTHD(dt.Rows[0]).Tang) == 0 && txtGiaSi.Text == "0"))
+                        {
+                            return false;
+                        }
             return true;
         }
 
         private async void btnXacNhan_Click(object sender, EventArgs e)
         {
-            c.SoLuong = Convert.ToInt32(numSL.Value);
-            if (chBTang.Checked)
+            try
             {
-                c.Tang = 1;
-            }
-            else
-            {
-                if (Program.UnFormatNumber(txtGiaSi.Text) != h.GiaBan)
+                c.SoLuong = Convert.ToInt32(numSL.Value);
+                if (chBTang.Checked)
                 {
-                    c.GiaSi = int.Parse(txtGiaSi.Text);
+                    c.Tang = 1;
                 }
+                else
+                {
+                    if (Program.UnFormatNumber(txtGiaSi.Text) / c.SoLuong != h.GiaBan)
+                    {
+                        c.GiaSi = Program.UnFormatNumber(txtGiaSi.Text);
+                    }
+                }
+                if (await Check())
+                {
+                    await new CTHDBAL().CapNhap(c);
+                }
+                else
+                {
+                    await new CTHDBAL().Them(c);
+                }
+                this.Close();
             }
-            if (await Check())
+            catch (Exception)
             {
-                await new CTHDBAL().CapNhap(c);
+                MessageBox.Show("Không thể thêm hàng vào bill. Vui lòng thử lại.\nNếu vẫn tiếp lục lỗi nhiều lần vui lòng báo kỹ thuật viên");
             }
-            else
-            {
-                await new CTHDBAL().Them(c);
-            }
-            this.Close();
         }
 
         private void chBTang_CheckedChanged(object sender, EventArgs e)
