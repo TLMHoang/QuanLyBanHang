@@ -50,7 +50,7 @@ namespace DAL
             return 0;
         }
         
-        public  async Task<DataTable> ExecuteQuery(string ProcName, params SqlParameter[] parameters)
+        public async Task<DataTable> ExecuteQuery(string ProcName, params SqlParameter[] parameters)
         {
             DataTable dt = new DataTable();
 
@@ -72,7 +72,6 @@ namespace DAL
                         {
                             adapter.Fill(dt);
                         }
-
                     }
                 }
                 catch (Exception ex)

@@ -72,7 +72,7 @@ namespace GUI
             }
             else
             {
-                bsHang.Filter = String.Format("CONVERT(ID, System.String)='{0}' OR [TenHang] LIKE '%{0}%'", txtTimKiem.Text);
+              bsHang.Filter = String.Format("CONVERT(ID, System.String)='{0}' OR [TenHang] LIKE '%{0}%'", txtTimKiem.Text);
             }
         }
 

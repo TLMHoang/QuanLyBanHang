@@ -42,6 +42,7 @@ namespace GUI
             bsNhanVien.DataSource = await nhanVien.LayDT();
             bsTaiKhoan.DataSource = await taiKhoan.LayDT();
 
+            //dgvHang.DataSource = bsHang.DataSource;
 
             bsHang.ResumeBinding();
             bsNhanVien.ResumeBinding();

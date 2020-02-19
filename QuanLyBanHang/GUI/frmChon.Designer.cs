@@ -43,28 +43,28 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabHoanThanh = new System.Windows.Forms.TabPage();
-            this.tabHoanDon = new System.Windows.Forms.TabPage();
-            this.tabHuyDon = new System.Windows.Forms.TabPage();
             this.dgvHoanThanh = new System.Windows.Forms.DataGridView();
-            this.dgvHoanDon = new System.Windows.Forms.DataGridView();
-            this.dgvHuyDon = new System.Windows.Forms.DataGridView();
-            this.bsHoanThanh = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDKhachHangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDNhanVienDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ngayDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tinhTrangDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bsHoanThanh = new System.Windows.Forms.BindingSource(this.components);
+            this.tabHoanDon = new System.Windows.Forms.TabPage();
+            this.dgvHoanDon = new System.Windows.Forms.DataGridView();
+            this.tabHuyDon = new System.Windows.Forms.TabPage();
+            this.dgvHuyDon = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             this.grTimeline.SuspendLayout();
             this.tlpChonThoiGian.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabHoanThanh.SuspendLayout();
-            this.tabHoanDon.SuspendLayout();
-            this.tabHuyDon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoanThanh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHoanDon)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDon)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsHoanThanh)).BeginInit();
+            this.tabHoanDon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoanDon)).BeginInit();
+            this.tabHuyDon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDon)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -100,7 +100,7 @@
             this.grTimeline.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.grTimeline.Name = "grTimeline";
             this.grTimeline.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.grTimeline.Size = new System.Drawing.Size(565, 132);
+            this.grTimeline.Size = new System.Drawing.Size(565, 131);
             this.grTimeline.TabIndex = 2;
             this.grTimeline.TabStop = false;
             this.grTimeline.Text = "Chọn thời gian";
@@ -230,7 +230,7 @@
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.txtTimKiem, 3);
             this.txtTimKiem.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtTimKiem.Location = new System.Drawing.Point(3, 145);
+            this.txtTimKiem.Location = new System.Drawing.Point(3, 144);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(567, 26);
             this.txtTimKiem.TabIndex = 3;
@@ -242,10 +242,10 @@
             this.tabControl1.Controls.Add(this.tabHoanDon);
             this.tabControl1.Controls.Add(this.tabHuyDon);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tabControl1.Location = new System.Drawing.Point(3, 176);
+            this.tabControl1.Location = new System.Drawing.Point(3, 175);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(567, 354);
+            this.tabControl1.Size = new System.Drawing.Size(567, 355);
             this.tabControl1.TabIndex = 4;
             // 
             // tabHoanThanh
@@ -254,32 +254,10 @@
             this.tabHoanThanh.Location = new System.Drawing.Point(4, 29);
             this.tabHoanThanh.Name = "tabHoanThanh";
             this.tabHoanThanh.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHoanThanh.Size = new System.Drawing.Size(559, 321);
+            this.tabHoanThanh.Size = new System.Drawing.Size(559, 322);
             this.tabHoanThanh.TabIndex = 0;
             this.tabHoanThanh.Text = "Hoàn thành";
             this.tabHoanThanh.UseVisualStyleBackColor = true;
-            // 
-            // tabHoanDon
-            // 
-            this.tabHoanDon.Controls.Add(this.dgvHoanDon);
-            this.tabHoanDon.Location = new System.Drawing.Point(4, 29);
-            this.tabHoanDon.Name = "tabHoanDon";
-            this.tabHoanDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHoanDon.Size = new System.Drawing.Size(559, 321);
-            this.tabHoanDon.TabIndex = 1;
-            this.tabHoanDon.Text = "Hoàn Đơn";
-            this.tabHoanDon.UseVisualStyleBackColor = true;
-            // 
-            // tabHuyDon
-            // 
-            this.tabHuyDon.Controls.Add(this.dgvHuyDon);
-            this.tabHuyDon.Location = new System.Drawing.Point(4, 29);
-            this.tabHuyDon.Name = "tabHuyDon";
-            this.tabHuyDon.Padding = new System.Windows.Forms.Padding(3);
-            this.tabHuyDon.Size = new System.Drawing.Size(559, 321);
-            this.tabHuyDon.TabIndex = 2;
-            this.tabHuyDon.Text = "Hủy đơn";
-            this.tabHuyDon.UseVisualStyleBackColor = true;
             // 
             // dgvHoanThanh
             // 
@@ -299,31 +277,9 @@
             this.dgvHoanThanh.Name = "dgvHoanThanh";
             this.dgvHoanThanh.ReadOnly = true;
             this.dgvHoanThanh.RowHeadersVisible = false;
-            this.dgvHoanThanh.Size = new System.Drawing.Size(553, 315);
+            this.dgvHoanThanh.Size = new System.Drawing.Size(553, 316);
             this.dgvHoanThanh.TabIndex = 0;
             this.dgvHoanThanh.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvHoanThanh_CellDoubleClick);
-            // 
-            // dgvHoanDon
-            // 
-            this.dgvHoanDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHoanDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHoanDon.Location = new System.Drawing.Point(3, 3);
-            this.dgvHoanDon.Name = "dgvHoanDon";
-            this.dgvHoanDon.Size = new System.Drawing.Size(553, 315);
-            this.dgvHoanDon.TabIndex = 1;
-            // 
-            // dgvHuyDon
-            // 
-            this.dgvHuyDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHuyDon.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvHuyDon.Location = new System.Drawing.Point(3, 3);
-            this.dgvHuyDon.Name = "dgvHuyDon";
-            this.dgvHuyDon.Size = new System.Drawing.Size(553, 315);
-            this.dgvHuyDon.TabIndex = 1;
-            // 
-            // bsHoanThanh
-            // 
-            this.bsHoanThanh.DataSource = typeof(DTO.HoaDon);
             // 
             // iDDataGridViewTextBoxColumn
             // 
@@ -365,6 +321,50 @@
             this.tinhTrangDataGridViewTextBoxColumn.ReadOnly = true;
             this.tinhTrangDataGridViewTextBoxColumn.Width = 130;
             // 
+            // bsHoanThanh
+            // 
+            this.bsHoanThanh.DataSource = typeof(DTO.HoaDon);
+            // 
+            // tabHoanDon
+            // 
+            this.tabHoanDon.Controls.Add(this.dgvHoanDon);
+            this.tabHoanDon.Location = new System.Drawing.Point(4, 29);
+            this.tabHoanDon.Name = "tabHoanDon";
+            this.tabHoanDon.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHoanDon.Size = new System.Drawing.Size(559, 322);
+            this.tabHoanDon.TabIndex = 1;
+            this.tabHoanDon.Text = "Hoàn Đơn";
+            this.tabHoanDon.UseVisualStyleBackColor = true;
+            // 
+            // dgvHoanDon
+            // 
+            this.dgvHoanDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHoanDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHoanDon.Location = new System.Drawing.Point(3, 3);
+            this.dgvHoanDon.Name = "dgvHoanDon";
+            this.dgvHoanDon.Size = new System.Drawing.Size(553, 316);
+            this.dgvHoanDon.TabIndex = 1;
+            // 
+            // tabHuyDon
+            // 
+            this.tabHuyDon.Controls.Add(this.dgvHuyDon);
+            this.tabHuyDon.Location = new System.Drawing.Point(4, 29);
+            this.tabHuyDon.Name = "tabHuyDon";
+            this.tabHuyDon.Padding = new System.Windows.Forms.Padding(3);
+            this.tabHuyDon.Size = new System.Drawing.Size(559, 322);
+            this.tabHuyDon.TabIndex = 2;
+            this.tabHuyDon.Text = "Hủy đơn";
+            this.tabHuyDon.UseVisualStyleBackColor = true;
+            // 
+            // dgvHuyDon
+            // 
+            this.dgvHuyDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHuyDon.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvHuyDon.Location = new System.Drawing.Point(3, 3);
+            this.dgvHuyDon.Name = "dgvHuyDon";
+            this.dgvHuyDon.Size = new System.Drawing.Size(553, 316);
+            this.dgvHuyDon.TabIndex = 1;
+            // 
             // frmChon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -385,12 +385,12 @@
             this.tlpChonThoiGian.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabHoanThanh.ResumeLayout(false);
-            this.tabHoanDon.ResumeLayout(false);
-            this.tabHuyDon.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHoanThanh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHoanDon)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDon)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsHoanThanh)).EndInit();
+            this.tabHoanDon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHoanDon)).EndInit();
+            this.tabHuyDon.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvHuyDon)).EndInit();
             this.ResumeLayout(false);
 
         }
